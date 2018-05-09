@@ -13,9 +13,7 @@ class Answer {
       friendlyName,
     });
 
-    // we go and get the followon questions here (if needed)
-    // https://beta-api.alumnibaseapp.com
-
+    // we get followon questions here
     const sendData = {
       answeredQuestionID: questionID,
       questionMetaData: `uni-step-${step}`,
@@ -27,6 +25,7 @@ class Answer {
     if (fetchResponse.data.generalStatus === 'success') {
       return fetchResponse.data.payload;
     }
+
     return Promise.reject(new Error('Bad status'));
   }
 

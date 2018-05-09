@@ -6,16 +6,12 @@ const config = {
     universityName: 'University of London'.toUpperCase(),
   },
   '1-1': {
-    nationality: {
+    nationality1: {
       type: 'percentages',
       split: [
         {
           lookup: 'United Kingdom of Great Britain and Northern Ireland (the)',
           split: 80,
-        },
-        {
-          lookup: 'Afghanistan',
-          split: 10,
         },
       ],
     },

@@ -16,7 +16,7 @@ const instance = axios.create({
 module.exports = async (endpoint, data = {}) => {
   const url = `https://localhost:8080${endpoint}`;
 
-  console.log(`getting: ${url}`);
+  console.log(`doing: ${url}`);
 
   try {
     return await instance.post(url, data);
