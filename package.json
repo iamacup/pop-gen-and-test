@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",
+    "colors": "^1.2.4",
     "express": "^4.16.3",
     "faker": "^4.1.0",
     "lodash": "^4.17.10"

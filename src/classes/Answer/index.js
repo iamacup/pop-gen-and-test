@@ -1,4 +1,6 @@
 
+const colors = require('colors');
+
 class Answer {
   constructor(sessionID) {
     this.sessionID = sessionID;
@@ -12,6 +14,8 @@ class Answer {
       optionValue,
       friendlyName,
     });
+
+    console.log('adding answer: '.green, friendlyName, ' - ', optionValue, ' - ', optionID);
 
     // we get followon questions here
     const sendData = {
