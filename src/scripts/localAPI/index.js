@@ -4,6 +4,7 @@
 const axios = require('axios');
 const https = require('https');
 
+//this is quite 'bad' but we don't care because of the local certificate.
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 const instance = axios.create({

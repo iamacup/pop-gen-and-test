@@ -1,6 +1,6 @@
 
-const test = require("./test");
+const generatePopulation = require("./generate-population");
 
 module.exports = {
-  test,
+  generatePopulation,
 };

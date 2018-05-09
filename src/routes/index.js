@@ -18,10 +18,10 @@ const dispatch = (res, handler, args) => {
 
 const appRouter = (app) => {
 
-  app.get('/test', (req, res) => {
+  app.get('/generate-population', (req, res) => {
     const args = {};
 
-    dispatch(res, 'test', args);
+    dispatch(res, 'generatePopulation', args);
   });
 
   app.get('*', (req, res) => {
