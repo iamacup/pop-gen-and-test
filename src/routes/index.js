@@ -1,23 +1,23 @@
 
-//actions
+// actions
 const actions = require('../actions');
 
-//scripts
+// scripts
 const responseHandler = require('../scripts/responseHandler');
 
-const localInterface = require('../scripts/localApi');
+const localInterface = require('../scripts/localAPI');
 
-//our generic routing handler function
+// our generic routing handler function
 const dispatch = (res, handler, args) => {
-  actions[handler](args, localInterface,
+  actions[handler](
+    args, localInterface,
     (generalStatus, statusCode, payload) => {
       responseHandler(generalStatus, statusCode, payload, res);
-    }
+    },
   );
 };
 
 const appRouter = (app) => {
-
   app.get('/generate-population', (req, res) => {
     const args = {};
 
@@ -27,7 +27,6 @@ const appRouter = (app) => {
   app.get('*', (req, res) => {
     responseHandler('error', 'bad-request', null, res);
   });
-
-}
+};
 
 module.exports = appRouter;

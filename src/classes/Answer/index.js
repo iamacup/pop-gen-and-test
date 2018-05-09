@@ -13,22 +13,21 @@ class Answer {
       friendlyName,
     });
 
-    //we go and get the followon questions here (if needed)
-    //https://beta-api.alumnibaseapp.com
+    // we go and get the followon questions here (if needed)
+    // https://beta-api.alumnibaseapp.com
 
     const sendData = {
       answeredQuestionID: questionID,
-      questionMetaData: 'uni-step-' + step,
+      questionMetaData: `uni-step-${step}`,
       questionState: this.formattedAnswers.answers,
     };
 
     const fetchResponse = await localInterface('/api/questions/additionalData/followonQuestions', sendData);
 
-    if(fetchResponse.data.generalStatus === 'success') {
+    if (fetchResponse.data.generalStatus === 'success') {
       return fetchResponse.data.payload;
-    } else {
-      return Promise.reject('Bad status');
     }
+    return Promise.reject(new Error('Bad status'));
   }
 
   get formattedAnswers() {
@@ -38,9 +37,9 @@ class Answer {
       answers: {},
     };
 
-    for(let a=0; a<this.answers.length; a++) {
+    for (let a = 0; a < this.answers.length; a++) {
       const answerObj = {};
-      
+
       answerObj[this.answers[a].friendlyName] = {
         optionID: this.answers[a].optionID,
         optionValue: this.answers[a].optionValue,
@@ -49,11 +48,11 @@ class Answer {
       results.answers[a] = {
         questionID: this.answers[a].questionID,
         answer: answerObj,
-      }
+      };
     }
 
     return results;
   }
-};
+}
 
 module.exports = Answer;
