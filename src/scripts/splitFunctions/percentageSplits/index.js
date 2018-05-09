@@ -7,9 +7,22 @@ const handlePercentageSplits = async (question, config, friendlyName, answer, lo
   // we have to create an 'output' here which is initially a copy of the options
   const out = [];
 
-  question.parts[friendlyName].options.forEach((value) => {
-    out.push(_.assign({}, value));
-  });
+  // we take a look and see what we do based on the sub type
+  if (typeof config[friendlyName] !== 'undefined' && config[friendlyName].subType === 'pick') {
+    config[friendlyName].split.forEach((value) => {
+      out.push({
+        drawData: null,
+        optionID: null,
+        optionValue: value.lookup,
+        order: -1,
+        validated: false,
+      });
+    });
+  } else {
+    question.parts[friendlyName].options.forEach((value) => {
+      out.push(_.assign({}, value));
+    });
+  }
 
   // some variables
   let split = [];

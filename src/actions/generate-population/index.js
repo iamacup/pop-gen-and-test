@@ -1,6 +1,10 @@
 
 const executionItems = require('../../steps');
 
+// percentages
+// subtype - lookup - will lookup the options based on the percentages and spread out over the remaining options that are not specified
+// subtype - pick - will split based on the optiosn provided (free text)
+
 const config = {
   '0-1': {
     universityName: 'University of London'.toUpperCase(),
@@ -8,10 +12,37 @@ const config = {
   '1-1': {
     nationality1: {
       type: 'percentages',
+      subType: 'lookup',
       split: [
         {
           lookup: 'United Kingdom of Great Britain and Northern Ireland (the)',
           split: 80,
+        },
+      ],
+    },
+  },
+  '1-2': {
+    liveInUK: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Yes',
+          split: 80,
+        },
+      ],
+    },
+    postcode: {
+      type: 'percentages',
+      subType: 'pick',
+      split: [
+        {
+          lookup: 'NG5 4JX',
+          split: 50,
+        },
+        {
+          lookup: 'SE17 3SD',
+          split: 50,
         },
       ],
     },
@@ -41,7 +72,14 @@ module.exports = async (urlData, localInterface, responseFunc) => {
       const value = executionItems[a];
 
       const questions = await getQuestions(localInterface, value.step);
-      const response = await value.questionFunction(questions.data, localInterface, value.step, sessionID, config[value.step]);
+
+      let useConfig = config[value.step];
+
+      if (typeof useConfig === 'undefined') {
+        useConfig = {};
+      }
+
+      const response = await value.questionFunction(questions.data, localInterface, value.step, sessionID, useConfig);
 
       if (sessionID === null) {
         ({ sessionID } = response);
