@@ -1,7 +1,12 @@
 
 const Answer = require('../../classes/Answer');
 const answerQuestions = require('../../util/answerWrapper');
+
 const handlePercentageSplits = require('../../scripts/splitFunctions/percentageSplits');
+const timeDistributions = require('../../scripts/splitFunctions/timeDistributions');
+
+const { getRandomInt } = require('../../scripts/randomFunctions');
+const _ = require('lodash');
 
 module.exports = async (questions, localInterface, step, sessionID, config) => {
   console.log(`doing: ${step}`);
@@ -54,8 +59,19 @@ module.exports = async (questions, localInterface, step, sessionID, config) => {
 
       const followon = await handlePercentageSplits(question, config, friendlyName, answer, localInterface, step);
       updateUseQuestions(followon);
+    } else if (question.type === 'monthYear') {
+      const friendlyName = Object.keys(question.parts)[0];
+      let followon = null;
+
+      if (typeof config[friendlyName] !== 'undefined' && config[friendlyName].type === 'dates') {
+        followon = await timeDistributions(question, friendlyName, answer, localInterface, step, config[friendlyName].split);
+      } else {
+        followon = await timeDistributions(question, friendlyName, answer, localInterface, step);
+      }
+
+      updateUseQuestions(followon);
     } else {
-      console.log(`TYPE NOT SUPPORTED: ${question.type} WITH friendlyName(s):`);
+      console.log(`TYPE NOT SUPPORTED: ${question.type} WITH friendlyName(s):`.red);
       console.log(Object.keys(question.parts));
     }
 

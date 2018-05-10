@@ -1,7 +1,7 @@
 
 const _ = require('lodash');
 
-const getRandomArbitrary = (min, max) => Math.random() * ((max - min) + min);
+const { getRandomArbitrary } = require('../../randomFunctions');
 
 const handlePercentageSplits = async (question, config, friendlyName, answer, localInterface, step) => {
   // we have to create an 'output' here which is initially a copy of the options
