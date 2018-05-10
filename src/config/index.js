@@ -425,6 +425,38 @@ const config = {
       ],
     },
   },
+  '1-4': {
+    ethnicity: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'White',
+          split: 70,
+        },
+      ],
+    },
+    disability: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'No known disability',
+          split: 95,
+        },
+      ],
+    },
+    religion: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'No religion',
+          split: 60,
+        },
+      ],
+    },
+  },
 };
 
 module.exports = config;

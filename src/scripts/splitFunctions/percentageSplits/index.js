@@ -1,5 +1,6 @@
 
 const _ = require('lodash');
+const colors = require('colors');
 
 const { getRandomArbitrary } = require('../../randomFunctions');
 
@@ -54,7 +55,7 @@ const handlePercentageSplits = async (question, config, friendlyName, answer, lo
       });
 
       if (found === false) {
-        console.log(`could not match ${value.lookup} in step${step}`);
+        console.log(`could not match ${value.lookup} in step${step}`.red);
       }
     });
   }

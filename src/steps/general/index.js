@@ -2,8 +2,9 @@
 const Answer = require('../../classes/Answer');
 const answerQuestions = require('../../util/answerWrapper');
 
-const handlePercentageSplits = require('../../scripts/splitFunctions/percentageSplits');
+const percentageSplits = require('../../scripts/splitFunctions/percentageSplits');
 const timeDistributions = require('../../scripts/splitFunctions/timeDistributions');
+const freeTextSimulation = require('../../scripts/splitFunctions/freeTextSimulation');
 
 const { getRandomInt } = require('../../scripts/randomFunctions');
 const _ = require('lodash');
@@ -38,26 +39,26 @@ module.exports = async (questions, localInterface, step, sessionID, config) => {
       const friendlyName = Object.keys(question.parts)[0];
 
       if (typeof config[friendlyName] !== 'undefined' && config[friendlyName].type === 'percentages') {
-        const followon = await handlePercentageSplits(question, config, friendlyName, answer, localInterface, step);
+        const followon = await percentageSplits(question, config, friendlyName, answer, localInterface, step);
         updateUseQuestions(followon);
       } else {
-        const followon = await handlePercentageSplits(question, config, friendlyName, answer, localInterface, step);
+        const followon = await percentageSplits(question, config, friendlyName, answer, localInterface, step);
         updateUseQuestions(followon);
       }
     } else if (question.type === 'options') {
       const friendlyName = Object.keys(question.parts)[0];
 
       if (typeof config[friendlyName] !== 'undefined' && config[friendlyName].type === 'percentages') {
-        const followon = await handlePercentageSplits(question, config, friendlyName, answer, localInterface, step);
+        const followon = await percentageSplits(question, config, friendlyName, answer, localInterface, step);
         updateUseQuestions(followon);
       } else {
-        const followon = await handlePercentageSplits(question, config, friendlyName, answer, localInterface, step);
+        const followon = await percentageSplits(question, config, friendlyName, answer, localInterface, step);
         updateUseQuestions(followon);
       }
     } else if (question.type === 'postcode') {
       const friendlyName = Object.keys(question.parts)[0];
 
-      const followon = await handlePercentageSplits(question, config, friendlyName, answer, localInterface, step);
+      const followon = await percentageSplits(question, config, friendlyName, answer, localInterface, step);
       updateUseQuestions(followon);
     } else if (question.type === 'monthYear') {
       const friendlyName = Object.keys(question.parts)[0];
@@ -69,6 +70,11 @@ module.exports = async (questions, localInterface, step, sessionID, config) => {
         followon = await timeDistributions(question, friendlyName, answer, localInterface, step);
       }
 
+      updateUseQuestions(followon);
+    } else if (question.type === 'freeText') {
+      const friendlyName = Object.keys(question.parts)[0];
+
+      const followon = await freeTextSimulation(question, friendlyName, answer, localInterface, step);
       updateUseQuestions(followon);
     } else {
       console.log(`TYPE NOT SUPPORTED: ${question.type} WITH friendlyName(s):`.red);
