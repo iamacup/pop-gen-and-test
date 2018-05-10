@@ -1,11 +1,15 @@
 
 const Answer = require('../../classes/Answer');
 const answerQuestions = require('../../util/answerWrapper');
+const getQuestions = require('../../util/questionWrapper');
 
 module.exports = {
   step: '0-1',
-  questionFunction: async (questions, localInterface, step, sessionID, config) => {
+  questionFunction: async (localInterface, step, sessionID, config) => {
     console.log(`doing: ${step}`);
+
+    let questions = await getQuestions(localInterface, step, sessionID);
+    questions = questions.data;
 
     const friendlyName = 'universityName';
     const uniList = questions[0].parts[friendlyName].options;

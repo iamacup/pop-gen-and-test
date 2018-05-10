@@ -4,19 +4,6 @@ const config = require('../../config');
 
 let sessionID = null;
 
-const getQuestions = async (localInterface, step) => {
-  const sendData = {
-    sessionID,
-  };
-
-  const fetchResponse = await localInterface(`/api/universityWizzard/getStep/${step}`, sendData);
-
-  if (fetchResponse.data.generalStatus === 'success') {
-    return fetchResponse.data.payload;
-  }
-  return Promise.reject(fetchResponse.data);
-};
-
 module.exports = async (urlData, localInterface, responseFunc) => {
   try {
     console.log('!! STARTING !!');
@@ -24,15 +11,13 @@ module.exports = async (urlData, localInterface, responseFunc) => {
     for (let a = 0; a < executionItems.length; a++) {
       const value = executionItems[a];
 
-      const questions = await getQuestions(localInterface, value.step);
-
       let useConfig = config[value.step];
 
       if (typeof useConfig === 'undefined') {
         useConfig = {};
       }
 
-      const response = await value.questionFunction(questions.data, localInterface, value.step, sessionID, useConfig);
+      const response = await value.questionFunction(localInterface, value.step, sessionID, useConfig);
 
       if (sessionID === null) {
         ({ sessionID } = response);

@@ -7,6 +7,10 @@
 // - month can be string rand (a random month will be picked) or an integer, 1 through 12
 // - yearsAgo must be an integer that is number of years ago (which could be 0 if to use 2018)
 
+// structure of section 2-1 is slightly different - NOTE we do not currently support multiple universities in generation!
+// we supply a BASE object with a qualificationLoops object which sets up the percentage likelyhood of multiple qualifications happening
+// we then specify the data for each loop inside of the qualifications array like we would for any other (Accepts normal arguments)
+
 const config = {
   '0-1': {
     universityName: 'University of London'.toUpperCase(),
@@ -453,6 +457,70 @@ const config = {
         {
           lookup: 'No religion',
           split: 60,
+        },
+      ],
+    },
+  },
+  'uni-qualifications': {
+    BASE: {
+      qualificationLoops: {
+        split: [
+          {
+            count: 1,
+            percent: 80,
+          },
+          {
+            count: 2,
+            percent: 15,
+          },
+          {
+            count: 3,
+            percent: 5,
+          },
+        ],
+      },
+    },
+    qualifications: [
+      {
+        countID: 1,
+        data: {
+
+        },
+      },
+      {
+        countID: 2,
+        data: {
+
+        },
+      },
+      {
+        countID: 3,
+        data: {
+
+        },
+      },
+    ],
+  },
+  '2-2': {
+    anotherUniversity: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'No',
+          split: 100,
+        },
+      ],
+    },
+  },
+  '3-2': {
+    ukPreUniStudy: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Yes',
+          split: 90,
         },
       ],
     },

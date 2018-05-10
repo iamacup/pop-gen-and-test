@@ -1,10 +1,12 @@
 
 const colors = require('colors');
+const _ = require('lodash');
 
 class Answer {
-  constructor(sessionID) {
+  constructor(sessionID, additionalSendData) {
     this.sessionID = sessionID;
     this.answers = [];
+    this.additionalSendData = additionalSendData;
   }
 
   async addAnswer(questionID, optionID, optionValue, friendlyName, localInterface, step) {
@@ -41,20 +43,44 @@ class Answer {
     };
 
     for (let a = 0; a < this.answers.length; a++) {
-      const answerObj = {};
+      // we have to see if there is already something for this question ID
+      const keys = Object.keys(results.answers);
+      let done = false;
 
-      answerObj[this.answers[a].friendlyName] = {
-        optionID: this.answers[a].optionID,
-        optionValue: this.answers[a].optionValue,
-      };
+      for (let b = 0; b < keys.length; b++) {
+        if (results.answers[keys[b]].questionID === this.answers[a].questionID) {
+          results.answers[keys[b]].answer[this.answers[a].friendlyName] = {
+            optionID: this.answers[a].optionID,
+            optionValue: this.answers[a].optionValue,
+          };
 
-      results.answers[a] = {
-        questionID: this.answers[a].questionID,
-        answer: answerObj,
-      };
+          done = true;
+        }
+      }
+
+      // otherwise we just ad the result
+      if (done === false) {
+        const answerObj = {};
+
+        answerObj[this.answers[a].friendlyName] = {
+          optionID: this.answers[a].optionID,
+          optionValue: this.answers[a].optionValue,
+        };
+
+        results.answers[a] = {
+          questionID: this.answers[a].questionID,
+          answer: answerObj,
+        };
+      }
     }
 
-    return results;
+    let finalResult = results;
+
+    if (typeof this.additionalSendData !== 'undefined') {
+      finalResult = _.assign({}, results, this.additionalSendData);
+    }
+
+    return finalResult;
   }
 }
 
