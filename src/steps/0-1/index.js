@@ -6,7 +6,7 @@ const getQuestions = require('../../util/questionWrapper');
 module.exports = {
   step: '0-1',
   questionFunction: async (localInterface, step, sessionID, config) => {
-    console.log(`doing: ${step}`);
+    // console.log(`doing: ${step}`);
 
     let questions = await getQuestions(localInterface, step, sessionID);
     questions = questions.data;

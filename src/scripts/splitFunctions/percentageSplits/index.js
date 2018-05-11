@@ -36,7 +36,7 @@ const handlePercentageSplits = async (question, config, friendlyName, answer, lo
     split.forEach((value) => { total += value.split; });
 
     if (total > 100) {
-      return Promise.reject(new Error(`Invalid percentage totals: ${total}`));
+      // return Promise.reject(new Error(`Invalid percentage totals: ${total}`));
     }
 
     // we attatch range values here where they are specified

@@ -32,7 +32,12 @@ class Answer {
       return fetchResponse.data.payload;
     }
 
+    console.log(fetchResponse.data);
     return Promise.reject(new Error('Bad status'));
+  }
+
+  get latestAnswer() {
+    return this.answers[this.answers.length - 1];
   }
 
   get formattedAnswers() {

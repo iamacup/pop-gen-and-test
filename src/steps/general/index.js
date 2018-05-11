@@ -6,12 +6,15 @@ const getQuestions = require('../../util/questionWrapper');
 const percentageSplits = require('../../scripts/splitFunctions/percentageSplits');
 const timeDistributions = require('../../scripts/splitFunctions/timeDistributions');
 const freeTextSimulation = require('../../scripts/splitFunctions/freeTextSimulation');
+const educationHistorySplits = require('../../scripts/splitFunctions/educationHistorySplits');
+const workHoursSplits = require('../../scripts/splitFunctions/workHoursSplits');
+const salarySplit = require('../../scripts/splitFunctions/salarySplit');
 
 const { getRandomInt } = require('../../scripts/randomFunctions');
 const _ = require('lodash');
 
 module.exports = async (localInterface, step, sessionID, config, additionalSendData) => {
-  console.log(`doing: ${step}`);
+  // console.log(`doing: ${step}`);
 
   let questions = await getQuestions(localInterface, step, sessionID);
   questions = questions.data;
@@ -89,20 +92,60 @@ module.exports = async (localInterface, step, sessionID, config, additionalSendD
 
         updateUseQuestions(followon);
       }
+    } else if (question.type === 'locationVariableDetail') {
+      const friendlyName = Object.keys(question.parts)[0];
+
+      const followon = await percentageSplits(question, config, friendlyName, answer, localInterface, step);
+      updateUseQuestions(followon);
+    } else if (question.type === 'educationHistory') {
+      const friendlyNames = Object.keys(question.parts);
+
+      const followon = await educationHistorySplits(question, config, friendlyNames, answer, localInterface, step);
+      updateUseQuestions(followon);
+    } else if (question.type === 'EmploymentStatusWithImportance') {
+      const followon1 = await percentageSplits(question, config, 'graduateDestination', answer, localInterface, step);
+      updateUseQuestions(followon1);
+
+      const latestAnswer = answer.latestAnswer;
+      let pickedOption = null;
+
+      question.parts.graduateDestinationMostImportant.options.forEach((value) => {
+        if (value.optionValue === latestAnswer.optionValue) {
+          pickedOption = value;
+        }
+      });
+
+      const followon2 = await answer.addAnswer(question.questionID, pickedOption.optionID, pickedOption.optionValue, 'graduateDestinationMostImportant', localInterface, step);
+      updateUseQuestions(followon2);
+    } else if (question.type === 'select' && question.drawData.type === 'companySelectWithRemoteLookup') {
+      const friendlyName = Object.keys(question.parts)[0];
+
+      const { companyNames } = config[friendlyName];
+      const finalVal = companyNames[getRandomInt(0, companyNames.length - 1)];
+
+      const followon = await answer.addAnswer(question.questionID, null, finalVal, friendlyName, localInterface, step);
+      updateUseQuestions(followon);
+    } else if (question.type === 'range') {
+      const friendlyName = Object.keys(question.parts)[0];
+
+      const followon = await percentageSplits(question, config, friendlyName, answer, localInterface, step);
+      updateUseQuestions(followon);
+    } else if (question.type === 'scale') {
+      const friendlyName = Object.keys(question.parts)[0];
+
+      const followon = await percentageSplits(question, config, friendlyName, answer, localInterface, step);
+      updateUseQuestions(followon);
+    } else if (question.type === 'hoursContractedActual') {
+      const followon = await workHoursSplits(question, config, answer, localInterface, step);
+      updateUseQuestions(followon);
+    } else if (question.type === 'currencySalaryBonusTwo') {
+      const followon = await salarySplit(question, config, answer, localInterface, step);
+      updateUseQuestions(followon);
     } else {
       console.log(`TYPE NOT SUPPORTED: ${question.type} WITH:`.red);
       console.log(question);
       console.log(Object.keys(question.parts));
     }
-
-    // locationVariableDetail
-    // educationHistory
-    // EmploymentStatusWithImportance
-    // select - companySelectWithRemoteLookup
-    // currencySalaryBonusTwo
-    // hoursContractedActual
-    // range
-    // scale
 
     iterator++;
 
