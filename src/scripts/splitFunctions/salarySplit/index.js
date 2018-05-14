@@ -1,5 +1,6 @@
 
 const _ = require('lodash');
+const colors = require('colors');
 
 const { getRandomInt } = require('../../randomFunctions');
 const pickItemBasedOnPercentage = require('../../../util/pickItemBasedOnPercentage');
@@ -9,14 +10,18 @@ const percentageSplits = require('../../../scripts/splitFunctions/percentageSpli
 const salarySplit = async (question, config, answer, localInterface, step) => {
   console.log('function entry');
 
-
-  // console.log(question.parts.unpaid);
-  // console.log(question.parts.salaryPeriod);
-  // console.log(question.parts.bonusPeriod);
-
-
   const followon1 = await percentageSplits(question, config, 'unpaid', answer, localInterface, step);
   const unpaidAnswer = answer.latestAnswer;
+
+  let annualSalary = 0;
+  let annualBonus = 0;
+
+  if (unpaidAnswer.optionValue === 'No') {
+    console.log('NEED TO IMPLEMENT PROPPER SALARY AND BONUS RANDOM'.red);
+
+    annualSalary = 80000;
+    annualBonus = 5000;
+  }
 
   // pull back the last answer, if it was yes to unpaid - don't put in a salary!
 
@@ -28,6 +33,32 @@ const salarySplit = async (question, config, answer, localInterface, step) => {
 
   const followon4 = await percentageSplits(question, config, 'bonusPeriod', answer, localInterface, step);
   const bonusPeriodAnswer = answer.latestAnswer;
+
+  let finalSalaryValue = 0;
+  let finalBonusValue = 0;
+
+  if (unpaidAnswer.optionValue === 'No') {
+    if (salaryPeriodAnswer.optionValue === 'Monthly') {
+      finalSalaryValue = annualSalary / 12;
+    } else if (salaryPeriodAnswer.optionValue === 'Weekly') {
+      finalSalaryValue = annualSalary / 52;
+    } else if (salaryPeriodAnswer.optionValue === 'Daily') {
+      finalSalaryValue = annualSalary / 365;
+    }
+
+    if (bonusPeriodAnswer.optionValue === 'Annually') {
+      finalBonusValue = annualBonus;
+    } else if (bonusPeriodAnswer.optionValue === 'Monthly') {
+      finalBonusValue = annualBonus / 12;
+    } else if (bonusPeriodAnswer.optionValue === 'Weekly') {
+      finalBonusValue = annualBonus / 52;
+    } else if (bonusPeriodAnswer.optionValue === 'Daily') {
+      finalBonusValue = annualBonus / 365;
+    }
+  }
+
+  const followon5 = await answer.addAnswer(question.questionID, null, `${finalSalaryValue}`, 'salary', localInterface, step);
+  const followon6 = await answer.addAnswer(question.questionID, null, `${finalBonusValue}`, 'bonus', localInterface, step);
 
   const outs = [];
 

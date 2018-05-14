@@ -1,4 +1,6 @@
 
+const colors = require('colors');
+
 const executionItems = require('../../steps');
 const config = require('../../config');
 
@@ -23,6 +25,20 @@ module.exports = async (urlData, localInterface, responseFunc) => {
         ({ sessionID } = response);
       }
     }
+
+
+    console.log(sessionID);
+    // now we save the stuff!
+
+    /* const saveOut = await localInterface('/api/universityWizzard/saveSession', {
+      sessionID,
+    });
+
+    if (saveOut.data.generalStatus !== 'success') {
+      console.log(saveOut.data);
+    } else {
+      console.log('SUCCESS!'.green);
+    } */
 
     responseFunc('success', 'test-1', null);
   } catch (err) {

@@ -939,6 +939,44 @@ const config = {
         'Deloite',
       ],
     },
+    moreThanOneJob: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Yes',
+          split: 5,
+        },
+        {
+          lookup: 'No',
+          split: 95,
+        },
+      ],
+    },
+  },
+  '4-3': {
+
+  },
+  '4-4': {
+    workLocationDetail: {
+      type: 'percentages',
+      subType: 'pick',
+      split: [
+        {
+          lookup: 'NG5 4JX',
+          split: 40,
+        },
+        {
+          lookup: 'SE17 3SD',
+          split: 50,
+        },
+        // null is what happens when the user clicks 'don't know'
+        {
+          lookup: 'null',
+          split: 10,
+        },
+      ],
+    },
   },
   '4-5': {
     currency: {
@@ -991,7 +1029,7 @@ const config = {
         },
         {
           lookup: 'Monthly',
-          split: 70,
+          split: 10,
         },
         {
           lookup: 'Weekly',
@@ -999,7 +1037,7 @@ const config = {
         },
         {
           lookup: 'Daily',
-          split: 20,
+          split: 0,
         },
       ],
     },
@@ -1018,15 +1056,15 @@ const config = {
       ],
     },
     SalaryBASE: {
-      //upper and lower numbers are used for calculation of annual salary which is then mutated to whatever the selected period becomes
-      //we use a bell curve distribution between upper and lower numbers and then assign our values against that
+      // upper and lower numbers are used for calculation of annual salary which is then mutated to whatever the selected period becomes
+      // we use a bell curve distribution between upper and lower numbers and then assign our values against that
       lowerSalary: 20000,
       upperSalary: 1000000,
       lowerBonus: 200,
       upperBonus: 3000000,
-      //percentage of people that have a bonus
+      // percentage of people that have a bonus
       haveBonusPercent: 40,
-    }
+    },
     hoursBASE: {
       data: [
         {

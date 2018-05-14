@@ -1,4 +1,6 @@
 
+const colors = require('colors');
+
 const Answer = require('../../classes/Answer');
 const answerQuestions = require('../../util/answerWrapper');
 const getQuestions = require('../../util/questionWrapper');
@@ -14,7 +16,7 @@ const { getRandomInt } = require('../../scripts/randomFunctions');
 const _ = require('lodash');
 
 module.exports = async (localInterface, step, sessionID, config, additionalSendData) => {
-  // console.log(`doing: ${step}`);
+  console.log(`doing: ${step}`);
 
   let questions = await getQuestions(localInterface, step, sessionID);
   questions = questions.data;
@@ -29,7 +31,9 @@ module.exports = async (localInterface, step, sessionID, config, additionalSendD
   const updateUseQuestions = (followon) => {
     if (followon.length > 0) {
       followon.forEach((value) => {
-        useQuestions.push(value);
+        if (value !== null) {
+          useQuestions.push(value);
+        }
       });
     }
   };
@@ -41,6 +45,13 @@ module.exports = async (localInterface, step, sessionID, config, additionalSendD
   while (finish === false) {
     console.log('ITERATE');
     const question = useQuestions[iterator];
+
+    if (question === null) {
+      console.log('question is null!!!'.red);
+      console.log(iterator);
+      console.log(questions);
+      return Promise.reject(new Error('problem!'));
+    }
 
     // TODO selectWithOptionsAllowAdd might need a seperate if clause so that we can do some percentage chance of adding an option
     if (question.type === 'select' && (question.drawData.type === 'selectWithOptions' || question.drawData.type === 'selectWithOptionsAllowAdd')) {
@@ -140,6 +151,15 @@ module.exports = async (localInterface, step, sessionID, config, additionalSendD
       updateUseQuestions(followon);
     } else if (question.type === 'currencySalaryBonusTwo') {
       const followon = await salarySplit(question, config, answer, localInterface, step);
+      updateUseQuestions(followon);
+    } else if (question.type === 'financialNumber') {
+      const friendlyName = Object.keys(question.parts)[0];
+
+      console.log('Need to properly calculate other financial number'.red);
+
+      const salaryVal = getRandomInt(10000, 150000);
+
+      const followon = await answer.addAnswer(question.questionID, null, `${salaryVal}`, friendlyName, localInterface, step);
       updateUseQuestions(followon);
     } else {
       console.log(`TYPE NOT SUPPORTED: ${question.type} WITH:`.red);
