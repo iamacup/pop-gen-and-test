@@ -53,7 +53,7 @@ const timeDistributions = async (question, friendlyName, answer, localInterface,
   }
 
   if (pickValue === null) {
-    console.log('picking first');
+    console.log(`picking first - time distribution - ${step} - ${friendlyName}`);
     pickValue = cleanedArr[0];
   }
 

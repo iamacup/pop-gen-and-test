@@ -17,7 +17,7 @@ class Answer {
       friendlyName,
     });
 
-    console.log('adding answer: '.green, friendlyName, ' - ', optionValue, ' - ', optionID);
+    // console.log('adding answer: '.green, friendlyName, ' - ', optionValue, ' - ', optionID);
 
     // we get followon questions here
     const sendData = {

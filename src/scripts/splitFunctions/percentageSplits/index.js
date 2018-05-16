@@ -85,7 +85,7 @@ const handlePercentageSplits = async (question, config, friendlyName, answer, lo
   });
 
   if (pickValue === null) {
-    console.log('picking last');
+    console.log(`picking last - percentage split - ${step} - ${friendlyName}`);
     pickValue = out[out.length - 1];
   }
 

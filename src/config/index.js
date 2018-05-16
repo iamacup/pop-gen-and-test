@@ -762,6 +762,15 @@ const config = {
       ],
     },
   },
+  '2-4': {
+
+  },
+  '2-5': {
+
+  },
+  '3-1': {
+
+  },
   '3-2': {
     ukPreUniStudy: {
       type: 'percentages',
@@ -890,6 +899,9 @@ const config = {
         'Biology',
       ],
     },
+  },
+  '3-3': {
+
   },
   '4-1': {
     graduateDestination: {
@@ -1098,6 +1110,1052 @@ const config = {
           contractVarianceDownPercent: 0,
           actualVarianceUpPercent: 40,
           actualVarianceDownPercent: 40,
+        },
+      ],
+    },
+  },
+  '4-6': {
+    neededQualification: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Yes, the qualification was a formal requirement',
+          split: 20,
+        },
+        {
+          lookup: 'Yes, while the qualification was not a formal requirment it did give me an advantage',
+          split: 30,
+        },
+        {
+          lookup: 'No, the qualifation was not required',
+          split: 30,
+        },
+        {
+          lookup: 'Don\'t know',
+          split: 20,
+        },
+      ],
+    },
+    qualificationImportance: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'The Subject Studied',
+          split: 30,
+        },
+        {
+          lookup: 'The level of Study (Ba, Masters, PhD)',
+          split: 10,
+        },
+        {
+          lookup: 'The result of my qualification (1st class, 2.1 etc.)',
+          split: 10,
+        },
+        {
+          lookup: 'Sandwich / work experience gained as part of my coruse',
+          split: 10,
+        },
+        {
+          lookup: 'No one thing was most important',
+          split: 20,
+        },
+        {
+          lookup: 'Don\'t know',
+          split: 20,
+        },
+      ],
+    },
+    jobReason: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'It fitted into my career plan / it was exactly the type of work I wanted',
+          split: 10,
+        },
+        {
+          lookup: 'It was the best job offer I received',
+          split: 10,
+        },
+        {
+          lookup: 'It was the only job offer I received',
+          split: 10,
+        },
+        {
+          lookup: 'It was an opportunity to progress in the organisation',
+          split: 10,
+        },
+        {
+          lookup: 'To see if I would like the type of work it involved',
+          split: 10,
+        },
+        {
+          lookup: 'To gain and broaden my experience in order to get the type of job I really want',
+          split: 10,
+        },
+        {
+          lookup: 'It was in the right location',
+          split: 10,
+        },
+        {
+          lookup: 'The job was well-paid',
+          split: 10,
+        },
+        {
+          lookup: 'In order to earn a living / pay off debts',
+          split: 20,
+        },
+      ],
+    },
+    jobDiscovery: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'University / College Career Service',
+          split: 10,
+        },
+        {
+          lookup: 'Other University / college source (e.g. lecturer or website)',
+          split: 10,
+        },
+        {
+          lookup: 'Media (e.g. newspaper / magazine advertisement)',
+          split: 10,
+        },
+        {
+          lookup: 'Personal contacts, including family and friends',
+          split: 10,
+        },
+        {
+          lookup: 'Social media / professional networking sites',
+          split: 10,
+        },
+        {
+          lookup: 'Employer\'s website',
+          split: 10,
+        },
+        {
+          lookup: 'Recruitment agency / website',
+          split: 10,
+        },
+        {
+          lookup: 'Speculative Application',
+          split: 10,
+        },
+        {
+          lookup: 'Already worked there (i.e. internship)',
+          split: 10,
+        },
+        {
+          lookup: 'Other',
+          split: 10,
+        },
+      ],
+    },
+    previouslyEmployed: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Yes, before my programme of study',
+          split: 20,
+        },
+        {
+          lookup: 'Yes during my programme of study',
+          split: 30,
+        },
+        {
+          lookup: 'Yes, before and during my programme of study',
+          split: 30,
+        },
+        {
+          lookup: 'No',
+          split: 20,
+        },
+      ],
+    },
+    howPreviouslyEmployed: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'On a sandwich placement as part of my course',
+          split: 20,
+        },
+        {
+          lookup: 'On another kind of placemenet or project work',
+          split: 20,
+        },
+        {
+          lookup: 'As a holiday job',
+          split: 10,
+        },
+        {
+          lookup: 'Full time or part time work all year round',
+          split: 10,
+        },
+        {
+          lookup: 'Full time or part time work during term time',
+          split: 20,
+        },
+        {
+          lookup: 'On an internship',
+          split: 10,
+        },
+        {
+          lookup: 'In other ways',
+          split: 10,
+        },
+      ],
+    },
+  },
+  '5-1': {
+    applyDegreeToWork: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Strongly agree',
+          split: 20,
+        },
+        {
+          lookup: 'Agree',
+          split: 10,
+        },
+        {
+          lookup: 'Neither agree or disagree',
+          split: 30,
+        },
+        {
+          lookup: 'Disagree',
+          split: 20,
+        },
+        {
+          lookup: 'Strongly disagree',
+          split: 20,
+        },
+      ],
+    },
+    applySkillsToWork: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Strongly agree',
+          split: 20,
+        },
+        {
+          lookup: 'Agree',
+          split: 10,
+        },
+        {
+          lookup: 'Neither agree or disagree',
+          split: 30,
+        },
+        {
+          lookup: 'Disagree',
+          split: 20,
+        },
+        {
+          lookup: 'Strongly disagree',
+          split: 20,
+        },
+      ],
+    },
+    applyExtraCurricularToWork: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Strongly agree',
+          split: 20,
+        },
+        {
+          lookup: 'Agree',
+          split: 10,
+        },
+        {
+          lookup: 'Neither agree or disagree',
+          split: 30,
+        },
+        {
+          lookup: 'Disagree',
+          split: 20,
+        },
+        {
+          lookup: 'Strongly disagree',
+          split: 20,
+        },
+      ],
+    },
+    contributeMeaningfullyToLife: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Strongly agree',
+          split: 20,
+        },
+        {
+          lookup: 'Agree',
+          split: 10,
+        },
+        {
+          lookup: 'Neither agree or disagree',
+          split: 30,
+        },
+        {
+          lookup: 'Disagree',
+          split: 20,
+        },
+        {
+          lookup: 'Strongly disagree',
+          split: 20,
+        },
+      ],
+    },
+    currentWorkFitsWithFuturePlans: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Strongly agree',
+          split: 20,
+        },
+        {
+          lookup: 'Agree',
+          split: 10,
+        },
+        {
+          lookup: 'Neither agree or disagree',
+          split: 30,
+        },
+        {
+          lookup: 'Disagree',
+          split: 20,
+        },
+        {
+          lookup: 'Strongly disagree',
+          split: 20,
+        },
+      ],
+    },
+    currentWorkMeaningfulAndImportant: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Strongly agree',
+          split: 20,
+        },
+        {
+          lookup: 'Agree',
+          split: 10,
+        },
+        {
+          lookup: 'Neither agree or disagree',
+          split: 30,
+        },
+        {
+          lookup: 'Disagree',
+          split: 20,
+        },
+        {
+          lookup: 'Strongly disagree',
+          split: 20,
+        },
+      ],
+    },
+    furtherStudyAdvancesCareer: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Strongly agree',
+          split: 20,
+        },
+        {
+          lookup: 'Agree',
+          split: 10,
+        },
+        {
+          lookup: 'Neither agree or disagree',
+          split: 30,
+        },
+        {
+          lookup: 'Disagree',
+          split: 20,
+        },
+        {
+          lookup: 'Strongly disagree',
+          split: 20,
+        },
+      ],
+    },
+    professionalQualificationsAdvanceCareer: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Strongly agree',
+          split: 20,
+        },
+        {
+          lookup: 'Agree',
+          split: 10,
+        },
+        {
+          lookup: 'Neither agree or disagree',
+          split: 30,
+        },
+        {
+          lookup: 'Disagree',
+          split: 20,
+        },
+        {
+          lookup: 'Strongly disagree',
+          split: 20,
+        },
+      ],
+    },
+  },
+  '5-2': {
+    lifeSatisfaction: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: '0',
+          split: 10,
+        },
+        {
+          lookup: '1',
+          split: 5,
+        },
+        {
+          lookup: '2',
+          split: 10,
+        },
+        {
+          lookup: '3',
+          split: 10,
+        },
+        {
+          lookup: '4',
+          split: 5,
+        },
+        {
+          lookup: '5',
+          split: 10,
+        },
+        {
+          lookup: '6',
+          split: 10,
+        },
+        {
+          lookup: '7',
+          split: 10,
+        },
+        {
+          lookup: '8',
+          split: 10,
+        },
+        {
+          lookup: '9',
+          split: 10,
+        },
+        {
+          lookup: '10',
+          split: 10,
+        },
+      ],
+    },
+    lifeWorthwhile: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: '0',
+          split: 10,
+        },
+        {
+          lookup: '1',
+          split: 5,
+        },
+        {
+          lookup: '2',
+          split: 10,
+        },
+        {
+          lookup: '3',
+          split: 10,
+        },
+        {
+          lookup: '4',
+          split: 5,
+        },
+        {
+          lookup: '5',
+          split: 10,
+        },
+        {
+          lookup: '6',
+          split: 10,
+        },
+        {
+          lookup: '7',
+          split: 10,
+        },
+        {
+          lookup: '8',
+          split: 10,
+        },
+        {
+          lookup: '9',
+          split: 10,
+        },
+        {
+          lookup: '10',
+          split: 10,
+        },
+      ],
+    },
+    lifeHappy: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: '0',
+          split: 10,
+        },
+        {
+          lookup: '1',
+          split: 5,
+        },
+        {
+          lookup: '2',
+          split: 10,
+        },
+        {
+          lookup: '3',
+          split: 10,
+        },
+        {
+          lookup: '4',
+          split: 5,
+        },
+        {
+          lookup: '5',
+          split: 10,
+        },
+        {
+          lookup: '6',
+          split: 10,
+        },
+        {
+          lookup: '7',
+          split: 10,
+        },
+        {
+          lookup: '8',
+          split: 10,
+        },
+        {
+          lookup: '9',
+          split: 10,
+        },
+        {
+          lookup: '10',
+          split: 10,
+        },
+      ],
+    },
+    lifeAnxious: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: '0',
+          split: 10,
+        },
+        {
+          lookup: '1',
+          split: 5,
+        },
+        {
+          lookup: '2',
+          split: 10,
+        },
+        {
+          lookup: '3',
+          split: 10,
+        },
+        {
+          lookup: '4',
+          split: 5,
+        },
+        {
+          lookup: '5',
+          split: 10,
+        },
+        {
+          lookup: '6',
+          split: 10,
+        },
+        {
+          lookup: '7',
+          split: 10,
+        },
+        {
+          lookup: '8',
+          split: 10,
+        },
+        {
+          lookup: '9',
+          split: 10,
+        },
+        {
+          lookup: '10',
+          split: 10,
+        },
+      ],
+    },
+    recommendToFriendOrColleague: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: '0',
+          split: 10,
+        },
+        {
+          lookup: '1',
+          split: 5,
+        },
+        {
+          lookup: '2',
+          split: 10,
+        },
+        {
+          lookup: '3',
+          split: 10,
+        },
+        {
+          lookup: '4',
+          split: 5,
+        },
+        {
+          lookup: '5',
+          split: 10,
+        },
+        {
+          lookup: '6',
+          split: 10,
+        },
+        {
+          lookup: '7',
+          split: 10,
+        },
+        {
+          lookup: '8',
+          split: 10,
+        },
+        {
+          lookup: '9',
+          split: 10,
+        },
+        {
+          lookup: '10',
+          split: 10,
+        },
+      ],
+    },
+    trustOrCare: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Most people can be trusted',
+          split: 50,
+        },
+        {
+          lookup: 'You can’t be too careful in dealing with people',
+          split: 50,
+        },
+      ],
+    },
+  },
+  '5-3': {
+    viewsOnCourseDifferentSubject: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Very likely',
+          split: 20,
+        },
+        {
+          lookup: 'Likely',
+          split: 35,
+        },
+        {
+          lookup: 'Not very likely',
+          split: 20,
+        },
+        {
+          lookup: 'Not likely at all',
+          split: 20,
+        },
+        {
+          lookup: 'Don\'t know',
+          split: 5,
+        },
+      ],
+    },
+    viewsOnCourseDifferentInstitution: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Very likely',
+          split: 20,
+        },
+        {
+          lookup: 'Likely',
+          split: 35,
+        },
+        {
+          lookup: 'Not very likely',
+          split: 20,
+        },
+        {
+          lookup: 'Not likely at all',
+          split: 20,
+        },
+        {
+          lookup: 'Don\'t know',
+          split: 5,
+        },
+      ],
+    },
+    viewsOnCourseDifferentQualification: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Very likely',
+          split: 20,
+        },
+        {
+          lookup: 'Likely',
+          split: 35,
+        },
+        {
+          lookup: 'Not very likely',
+          split: 20,
+        },
+        {
+          lookup: 'Not likely at all',
+          split: 20,
+        },
+        {
+          lookup: 'Don\'t know',
+          split: 5,
+        },
+      ],
+    },
+    viewsOnCourseTotallyDifferent: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Very likely',
+          split: 20,
+        },
+        {
+          lookup: 'Likely',
+          split: 35,
+        },
+        {
+          lookup: 'Not very likely',
+          split: 20,
+        },
+        {
+          lookup: 'Not likely at all',
+          split: 20,
+        },
+        {
+          lookup: 'Don\'t know',
+          split: 5,
+        },
+      ],
+    },
+    viewsOnHEInnovative: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'A great extent',
+          split: 20,
+        },
+        {
+          lookup: 'Some extent',
+          split: 35,
+        },
+        {
+          lookup: 'Not at all',
+          split: 20,
+        },
+        {
+          lookup: 'Don\'t know',
+          split: 20,
+        },
+        {
+          lookup: 'Have not worked since finishing course',
+          split: 5,
+        },
+      ],
+    },
+    viewsOnHEDifferenceInWorkplace: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'A great extent',
+          split: 20,
+        },
+        {
+          lookup: 'Some extent',
+          split: 35,
+        },
+        {
+          lookup: 'Not at all',
+          split: 20,
+        },
+        {
+          lookup: 'Don\'t know',
+          split: 20,
+        },
+        {
+          lookup: 'Have not worked since finishing course',
+          split: 5,
+        },
+      ],
+    },
+    viewsOnHEChangeOrganisation: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'A great extent',
+          split: 20,
+        },
+        {
+          lookup: 'Some extent',
+          split: 35,
+        },
+        {
+          lookup: 'Not at all',
+          split: 20,
+        },
+        {
+          lookup: 'Don\'t know',
+          split: 20,
+        },
+        {
+          lookup: 'Have not worked since finishing course',
+          split: 5,
+        },
+      ],
+    },
+    viewsOnHEInfluenceWork: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'A great extent',
+          split: 20,
+        },
+        {
+          lookup: 'Some extent',
+          split: 35,
+        },
+        {
+          lookup: 'Not at all',
+          split: 20,
+        },
+        {
+          lookup: 'Don\'t know',
+          split: 20,
+        },
+        {
+          lookup: 'Have not worked since finishing course',
+          split: 5,
+        },
+      ],
+    },
+    viewsOnHEAccessJobOppts: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'A great extent',
+          split: 20,
+        },
+        {
+          lookup: 'Some extent',
+          split: 35,
+        },
+        {
+          lookup: 'Not at all',
+          split: 20,
+        },
+        {
+          lookup: 'Don\'t know',
+          split: 20,
+        },
+        {
+          lookup: 'Have not worked since finishing course',
+          split: 5,
+        },
+      ],
+    },
+    viewsOnHEEnhanceCredibility: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'A great extent',
+          split: 20,
+        },
+        {
+          lookup: 'Some extent',
+          split: 35,
+        },
+        {
+          lookup: 'Not at all',
+          split: 20,
+        },
+        {
+          lookup: 'Don\'t know',
+          split: 20,
+        },
+        {
+          lookup: 'Have not worked since finishing course',
+          split: 5,
+        },
+      ],
+    },
+    viewsOnHEProgressLongTerm: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'A great extent',
+          split: 20,
+        },
+        {
+          lookup: 'Some extent',
+          split: 35,
+        },
+        {
+          lookup: 'Not at all',
+          split: 20,
+        },
+        {
+          lookup: 'Don\'t know',
+          split: 20,
+        },
+        {
+          lookup: 'Have not worked since finishing course',
+          split: 5,
+        },
+      ],
+    },
+    viewsOnHEEnhanceSocialCapeabilities: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'A great extent',
+          split: 20,
+        },
+        {
+          lookup: 'Some extent',
+          split: 35,
+        },
+        {
+          lookup: 'Not at all',
+          split: 20,
+        },
+        {
+          lookup: 'Don\'t know',
+          split: 20,
+        },
+        {
+          lookup: 'Have not worked since finishing course',
+          split: 5,
+        },
+      ],
+    },
+    viewsOnHEEnhanceQualityOfLife: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'A great extent',
+          split: 20,
+        },
+        {
+          lookup: 'Some extent',
+          split: 35,
+        },
+        {
+          lookup: 'Not at all',
+          split: 20,
+        },
+        {
+          lookup: 'Don\'t know',
+          split: 20,
+        },
+        {
+          lookup: 'Have not worked since finishing course',
+          split: 5,
+        },
+      ],
+    },
+  },
+  '5-4': {
+    maritalStatus: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Single',
+          split: 45,
+        },
+        {
+          lookup: 'Married',
+          split: 20,
+        },
+        {
+          lookup: 'Civil Partnered',
+          split: 10,
+        },
+        {
+          lookup: 'Divorced',
+          split: 10,
+        },
+        {
+          lookup: 'Widowed',
+          split: 5,
+        },
+        {
+          lookup: 'Do not want to disclose this',
+          split: 10,
         },
       ],
     },

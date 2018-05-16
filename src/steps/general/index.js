@@ -16,7 +16,7 @@ const { getRandomInt } = require('../../scripts/randomFunctions');
 const _ = require('lodash');
 
 module.exports = async (localInterface, step, sessionID, config, additionalSendData) => {
-  console.log(`doing: ${step}`);
+  // console.log(`doing: ${step}`);
 
   let questions = await getQuestions(localInterface, step, sessionID);
   questions = questions.data;
@@ -43,7 +43,7 @@ module.exports = async (localInterface, step, sessionID, config, additionalSendD
   let finish = false;
 
   while (finish === false) {
-    console.log('ITERATE');
+    // console.log('ITERATE');
     const question = useQuestions[iterator];
 
     if (question === null) {

@@ -8,8 +8,6 @@ const pickItemBasedOnPercentage = require('../../../util/pickItemBasedOnPercenta
 const percentageSplits = require('../../../scripts/splitFunctions/percentageSplits');
 
 const salarySplit = async (question, config, answer, localInterface, step) => {
-  console.log('function entry');
-
   const followon1 = await percentageSplits(question, config, 'unpaid', answer, localInterface, step);
   const unpaidAnswer = answer.latestAnswer;
 
