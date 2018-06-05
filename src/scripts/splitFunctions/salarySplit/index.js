@@ -1,11 +1,13 @@
 
 const _ = require('lodash');
 const colors = require('colors');
+const stochasm = require('stochasm');
 
-const { getRandomInt } = require('../../randomFunctions');
+const { getRandomInt, getRandomArbitrary } = require('../../randomFunctions');
 const pickItemBasedOnPercentage = require('../../../util/pickItemBasedOnPercentage');
 
 const percentageSplits = require('../../../scripts/splitFunctions/percentageSplits');
+
 
 const salarySplit = async (question, config, answer, localInterface, step) => {
   const followon1 = await percentageSplits(question, config, 'unpaid', answer, localInterface, step);
@@ -15,10 +17,36 @@ const salarySplit = async (question, config, answer, localInterface, step) => {
   let annualBonus = 0;
 
   if (unpaidAnswer.optionValue === 'No') {
-    console.log('NEED TO IMPLEMENT PROPPER SALARY AND BONUS RANDOM'.red);
+    while (annualSalary === 0) {
+      const maxS = config.SalaryBASE.upperSalary;
+      const minS = config.SalaryBASE.lowerSalary;
+      const meanS = config.SalaryBASE.meanSalary;
 
-    annualSalary = 80000;
-    annualBonus = 5000;
+      const salaryRandom = stochasm({
+        mean: meanS, stdev: ((maxS + minS) / 2) / 7, min: minS, max: maxS,
+      });
+
+      annualSalary = salaryRandom.next();
+
+
+      const maxB = config.SalaryBASE.upperBonus;
+      const minB = config.SalaryBASE.lowerBonus;
+      const meanB = config.SalaryBASE.meanBonus;
+
+      const bonusRandom = stochasm({
+        mean: meanB, stdev: ((maxB + minB) / 2) / 7, min: minB, max: maxB,
+      });
+
+      annualBonus = bonusRandom.next();
+
+
+      annualBonus = Math.round(annualBonus / 1000) * 1000;
+      annualSalary = Math.round(annualSalary / 1000) * 1000;
+
+      console.log('SALARIES:', annualBonus, annualSalary);
+    }
+  } else {
+    console.log('UNPAID');
   }
 
   // pull back the last answer, if it was yes to unpaid - don't put in a salary!

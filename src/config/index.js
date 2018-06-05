@@ -1071,9 +1071,11 @@ const config = {
       // upper and lower numbers are used for calculation of annual salary which is then mutated to whatever the selected period becomes
       // we use a bell curve distribution between upper and lower numbers and then assign our values against that
       lowerSalary: 20000,
+      meanSalary: 70000,
       upperSalary: 1000000,
       lowerBonus: 200,
-      upperBonus: 3000000,
+      meanBonus: 1000,
+      upperBonus: 400000,
       // percentage of people that have a bonus
       haveBonusPercent: 40,
     },
