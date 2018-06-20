@@ -2,7 +2,9 @@
 const colors = require('colors');
 
 const executionItems = require('../../steps');
-const config = require('../../config');
+
+// eslint-disable-next-line import/no-dynamic-require
+const config = require(`../../config/${process.argv[4]}`);
 
 module.exports = async (urlData, localInterface, responseFunc) => {
   let sessionID = null;

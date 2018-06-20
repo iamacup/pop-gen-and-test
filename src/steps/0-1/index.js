@@ -16,7 +16,7 @@ module.exports = {
     const answer = new Answer(sessionID);
 
     for (let a = 0; a < uniList.length; a++) {
-      if (uniList[a].optionValue.toUpperCase() === config[friendlyName]) {
+      if (uniList[a].optionValue.toUpperCase() === process.argv[3].toUpperCase()) {
         const followon = await answer.addAnswer(questions[0].questionID, uniList[a].optionID, uniList[a].optionValue, friendlyName, localInterface, step);
       }
     }
