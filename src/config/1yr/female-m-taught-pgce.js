@@ -1045,14 +1045,14 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-        {
+        /*{
           lookup: 'Male',
           split: 97,
-        },
-        /* {
+        },*/
+        {
           lookup: 'Female',
           split: 97,
-        }, */
+        },
         {
           lookup: 'Other',
           split: 3,
@@ -1570,6 +1570,48 @@ const config = {
               },
             ],
           },
+          /*CHANGETHIS - only applies to certain set of things*/
+          mastersType: {
+            type: 'percentages',
+            subType: 'lookup',
+            split: [
+              {
+                lookup: 'Taught Masters',
+                split: 100,
+              },
+              {
+                lookup: 'Research Masters',
+                split: 0,
+              },
+            ],
+          },
+          /*CHANGETHIS - only applies to a certain set of things and should reflect age*/
+          funding: {
+            type: 'percentages',
+            subType: 'lookup',
+            split: [
+              {
+                lookup: 'Self-funding',
+                split: 5,
+              },
+              {
+                lookup: 'Sponsorship',
+                split: 80,
+              },
+              {
+                lookup: 'Grant or award',
+                split: 5,
+              },
+              {
+                lookup: 'My employer provided financial support',
+                split: 5,
+              },
+              {
+                lookup: 'Other',
+                split: 5,
+              },
+            ],
+          },
           courseFTPT: {
             type: 'percentages',
             subType: 'lookup',
@@ -1617,7 +1659,7 @@ const config = {
             subType: 'lookup',
             split: [
               // this is wierd because we are doing multiple probabilities in 1
-              {
+              /*{
                 lookup: 'First-class honours (1st)',
                 split: 10,
               },
@@ -1637,7 +1679,7 @@ const config = {
                 lookup: 'Ordinary degree (pass)',
                 split: 5,
               },
-              // other
+              // other*/
               {
                 lookup: 'Distinction',
                 split: 10,
@@ -1662,20 +1704,12 @@ const config = {
             subType: 'lookup',
             split: [
               {
-                lookup: 'BA',
-                split: 45,
+                lookup: 'MBA',
+                split: 0,
               },
               {
-                lookup: 'BSc',
-                split: 40,
-              },
-              {
-                lookup: 'BEng',
-                split: 10,
-              },
-              {
-                lookup: 'LBB',
-                split: 5,
+                lookup: 'PGCE',
+                split: 100,
               },
             ],
           },

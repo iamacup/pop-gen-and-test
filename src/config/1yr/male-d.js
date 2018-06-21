@@ -1550,22 +1550,64 @@ const config = {
             split: [
               {
                 lookup: 'Undergraduate Bachelors Degree',
-                split: 60,
+                split: 0,
               },
               {
                 lookup: 'Undergraduate Masters Degree',
-                split: 10,
+                split: 0,
               },
               {
                 lookup: 'Masters',
-                split: 10,
+                split: 0,
               },
               {
                 lookup: 'Doctorate',
-                split: 15,
+                split: 100,
               },
               {
                 lookup: 'Other Degree',
+                split: 0,
+              },
+            ],
+          },
+          /*CHANGETHIS - only applies to certain set of things*/
+          mastersType: {
+            type: 'percentages',
+            subType: 'lookup',
+            split: [
+              {
+                lookup: 'Taught Masters',
+                split: 5,
+              },
+              {
+                lookup: 'Research Masters',
+                split: 80,
+              },
+            ],
+          },
+          /*CHANGETHIS - only applies to a certain set of things and should reflect age*/
+          funding: {
+            type: 'percentages',
+            subType: 'lookup',
+            split: [
+              {
+                lookup: 'Self-funding',
+                split: 5,
+              },
+              {
+                lookup: 'Sponsorship',
+                split: 80,
+              },
+              {
+                lookup: 'Grant or award',
+                split: 5,
+              },
+              {
+                lookup: 'My employer provided financial support',
+                split: 5,
+              },
+              {
+                lookup: 'Other',
                 split: 5,
               },
             ],
@@ -1617,7 +1659,7 @@ const config = {
             subType: 'lookup',
             split: [
               // this is wierd because we are doing multiple probabilities in 1
-              {
+              /*{
                 lookup: 'First-class honours (1st)',
                 split: 10,
               },
@@ -1645,10 +1687,10 @@ const config = {
               {
                 lookup: 'Merrit',
                 split: 20,
-              },
+              },*/
               {
                 lookup: 'Pass',
-                split: 60,
+                split: 90,
               },
               {
                 lookup: 'Fail',

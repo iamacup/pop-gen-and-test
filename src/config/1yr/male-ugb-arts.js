@@ -1570,6 +1570,48 @@ const config = {
               },
             ],
           },
+          /*CHANGETHIS - only applies to certain set of things*/
+          mastersType: {
+            type: 'percentages',
+            subType: 'lookup',
+            split: [
+              {
+                lookup: 'Taught Masters',
+                split: 5,
+              },
+              {
+                lookup: 'Research Masters',
+                split: 80,
+              },
+            ],
+          },
+          /*CHANGETHIS - only applies to a certain set of things and should reflect age*/
+          funding: {
+            type: 'percentages',
+            subType: 'lookup',
+            split: [
+              {
+                lookup: 'Self-funding',
+                split: 5,
+              },
+              {
+                lookup: 'Sponsorship',
+                split: 80,
+              },
+              {
+                lookup: 'Grant or award',
+                split: 5,
+              },
+              {
+                lookup: 'My employer provided financial support',
+                split: 5,
+              },
+              {
+                lookup: 'Other',
+                split: 5,
+              },
+            ],
+          },
           courseFTPT: {
             type: 'percentages',
             subType: 'lookup',
