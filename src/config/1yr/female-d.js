@@ -13,7 +13,7 @@
 
 const _ = require('lodash');
 
-//used for where people live in the UK
+// used for where people live in the UK
 const postcodeSplitArr = [
   {
     lookup: 'DH33AQ',
@@ -501,7 +501,7 @@ const postcodeSplitArr = [
   },
 ];
 
-//used for school location
+// used for school location
 const altPostcodeSplitArr = _.concat(
   postcodeSplitArr,
   {
@@ -510,7 +510,7 @@ const altPostcodeSplitArr = _.concat(
   },
 );
 
-//used for where people work
+// used for where people work
 const postcodeSplitArrWorkLocation = [
   {
     lookup: 'DH33AQ',
@@ -1022,13 +1022,14 @@ const config = {
     },
   },
   '1-2': {
+    /* CHANGETHIS - increases SLIGHTLY over age groups - base 90 down to 70 - this is the 'do they currently live in the uk' question */
     liveInUK: {
       type: 'percentages',
       subType: 'lookup',
       split: [
         {
           lookup: 'Yes',
-          split: 80,
+          split: 90,
         },
       ],
     },
@@ -1039,28 +1040,29 @@ const config = {
     },
   },
   '1-3': {
+    /* CHANGETHIS - should be 97% MALE or 97% FEMALE with all rest in OTHER */
     gender: {
       type: 'percentages',
       subType: 'lookup',
       split: [
         {
           lookup: 'Male',
-          split: 49,
+          split: 97,
         },
-        {
+        /* {
           lookup: 'Female',
-          split: 49,
+          split: 97,
+        }, */
+        {
+          lookup: 'Other',
+          split: 3,
         },
       ],
     },
+    /* CHANGETHIS - should make sense for the year group this is being created for - BUT remember that if they are 1YR after graduation, it is still possible for them to be 35 years old, its just not likely - they will mostly be 21 etc. for instance */
     age: {
       type: 'dates',
       split: [
-        {
-          yearsAgo: 20,
-          month: 'rand',
-          frequency: 1,
-        },
         {
           yearsAgo: 21,
           month: 'rand',
@@ -1336,81 +1338,6 @@ const config = {
           month: 'rand',
           frequency: 0,
         },
-        {
-          yearsAgo: 76,
-          month: 'rand',
-          frequency: 0,
-        },
-        {
-          yearsAgo: 77,
-          month: 'rand',
-          frequency: 1,
-        },
-        {
-          yearsAgo: 78,
-          month: 'rand',
-          frequency: 1,
-        },
-        {
-          yearsAgo: 79,
-          month: 'rand',
-          frequency: 1,
-        },
-        {
-          yearsAgo: 80,
-          month: 'rand',
-          frequency: 0,
-        },
-        {
-          yearsAgo: 81,
-          month: 'rand',
-          frequency: 0,
-        },
-        {
-          yearsAgo: 82,
-          month: 'rand',
-          frequency: 1,
-        },
-        {
-          yearsAgo: 83,
-          month: 'rand',
-          frequency: 1,
-        },
-        {
-          yearsAgo: 84,
-          month: 'rand',
-          frequency: 1,
-        },
-        {
-          yearsAgo: 85,
-          month: 'rand',
-          frequency: 0,
-        },
-        {
-          yearsAgo: 86,
-          month: 'rand',
-          frequency: 0,
-        },
-        {
-          yearsAgo: 87,
-          month: 'rand',
-          frequency: 0,
-        },
-        {
-          yearsAgo: 88,
-          month: 'rand',
-          frequency: 0,
-        },
-        {
-          yearsAgo: 89,
-          month: 'rand',
-          frequency: 0,
-        },
-        {
-          yearsAgo: 90,
-          month: 'rand',
-          frequency: 0,
-        },
       ],
     },
   },
@@ -1497,6 +1424,7 @@ const config = {
       {
         countID: 1,
         data: {
+          /* CHANGETHIS - this matters based on the input graduation group, should only have the correct years for the regions split evenly */
           graduationYear: {
             type: 'percentages',
             subType: 'lookup',
@@ -1615,6 +1543,7 @@ const config = {
               },
             ],
           },
+          /* CHANGETHIS - should be based on the graduation type needed */
           degreeLevel: {
             type: 'percentages',
             subType: 'lookup',
@@ -1655,6 +1584,7 @@ const config = {
               },
             ],
           },
+          /* CHANGETHIS - this is how long the degree is and depends on what type of degree they are doing */
           startYear: {
             type: 'percentages',
             subType: 'lookup',
@@ -1681,6 +1611,7 @@ const config = {
               },
             ],
           },
+          /* CHANGETHIS - needs to make sense for the type of degree */
           result: {
             type: 'percentages',
             subType: 'lookup',
@@ -1725,6 +1656,7 @@ const config = {
               },
             ],
           },
+          /* CHANGETHIS - this depends on the type of degree they are doing and the input that we want */
           courseType: {
             type: 'percentages',
             subType: 'lookup',
@@ -1752,13 +1684,13 @@ const config = {
       {
         countID: 2,
         data: {
-          // should put some data here if we want realism?
+          // ignore
         },
       },
       {
         countID: 3,
         data: {
-          // should put some data here if we want realism?
+          // ignore
         },
       },
     ],
@@ -1810,6 +1742,7 @@ const config = {
     },
   },
   '2-5': {
+    /* CHANGETHIS - let's make a trend that it is more positive the closer to their graduation date they are and the further out it goes the worse it becomes */
     experiencePrepEmployment: {
       type: 'percentages',
       subType: 'lookup',
@@ -1836,6 +1769,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - let's make a trend that it is more positive the closer to their graduation date they are and the further out it goes the worse it becomes */
     experiencePrepFurtherStudy: {
       type: 'percentages',
       subType: 'lookup',
@@ -1862,6 +1796,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - let's make a trend that it is more positive the closer to their graduation date they are and the further out it goes the worse it becomes */
     experiencePrepSelfEmployed: {
       type: 'percentages',
       subType: 'lookup',
@@ -1911,7 +1846,7 @@ const config = {
           split: 40,
         },
       ],
-    }
+    },
   },
   '3-2': {
     ukPreUniStudy: {
@@ -1942,11 +1877,11 @@ const config = {
             subSplits: [
               {
                 lookup: 'A*',
-                split: 20,
+                split: 40,
               },
               {
                 lookup: 'A',
-                split: 60,
+                split: 40,
               },
               {
                 lookup: 'B',
@@ -1972,15 +1907,15 @@ const config = {
             subSplits: [
               {
                 lookup: 'A',
-                split: 50,
+                split: 70,
               },
               {
                 lookup: 'B',
-                split: 30,
+                split: 20,
               },
               {
                 lookup: 'C',
-                split: 20,
+                split: 10,
               },
               {
                 lookup: 'D',
@@ -1995,23 +1930,23 @@ const config = {
         split: [
           {
             count: 1,
-            split: 10,
+            split: 0,
           },
           {
             count: 2,
-            split: 10,
+            split: 0,
           },
           {
             count: 3,
-            split: 50,
+            split: 70,
           },
           {
             count: 4,
-            split: 20,
+            split: 30,
           },
           {
             count: 5,
-            split: 10,
+            split: 0,
           },
         ],
       },
@@ -2043,12 +1978,13 @@ const config = {
         },
         {
           lookup: 'Don\'t know',
-          split: 20,
+          split: 60,
         },
       ],
-    }
+    },
   },
   '4-1': {
+    /* CHANGETHIS - more people work full time as time goes on - towards teh tail end we want a few retired people */
     graduateDestination: {
       type: 'percentages',
       subType: 'lookup',
@@ -2220,6 +2156,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - more people become self-employed / start their own business at different times in their lives etc. */
     employmentType: {
       type: 'percentages',
       subType: 'lookup',
@@ -2269,9 +2206,10 @@ const config = {
           split: 0,
         },
       ],
-    }
+    },
   },
   '4-3': {
+    /* CHANGETHIS - high yes at early times - virtually zero at 20+ with a very fast drop off at 10 years (like no more than 10 % at 10 years) */
     firstCareerJob: {
       type: 'percentages',
       subType: 'lookup',
@@ -2286,10 +2224,10 @@ const config = {
         },
       ],
     },
-    //to hard to make this work properly
-    /*companyActivity: {
+    // to hard to make this work properly
+    /* companyActivity: {
 
-    }*/
+    } */
     employerSize: {
       type: 'percentages',
       subType: 'lookup',
@@ -2326,6 +2264,7 @@ const config = {
     },
   },
   '4-4': {
+    /* CHANGETHIS - let's have this go up to like 80/20 as time goes on on a straight line */
     workLocationUKTest: {
       type: 'percentages',
       subType: 'lookup',
@@ -2345,6 +2284,7 @@ const config = {
       subType: 'pick',
       split: postcodeSplitArrWorkLocation,
     },
+    /* CHANGETHIS - for early times we need this to be just 1 year ago - for later times needs to vary between 1 - 10 years depending on how out we are with most concentrated around the 2 -3 year mark */
     startTime: {
       type: 'dates',
       split: [
@@ -2359,7 +2299,7 @@ const config = {
           frequency: 10,
         },
       ],
-    }
+    },
   },
   '4-5': {
     currency: {
@@ -2368,15 +2308,15 @@ const config = {
       split: [
         {
           lookup: 'GBP - Pound Sterling (£)',
-          split: 78,
+          split: 90,
         },
         {
           lookup: 'USD - US Dollar ($)',
-          split: 10,
+          split: 5,
         },
         {
           lookup: 'EUR - Euro (€)',
-          split: 10,
+          split: 5,
         },
       ],
     },
@@ -2386,7 +2326,7 @@ const config = {
       split: [
         {
           lookup: 'Monthly',
-          split: 70,
+          split: 80,
         },
         {
           lookup: 'Weekly',
@@ -2394,7 +2334,7 @@ const config = {
         },
         {
           lookup: 'Daily',
-          split: 20,
+          split: 10,
         },
       ],
     },
@@ -2434,6 +2374,21 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - remember this is the salary distribution and we want it to go up a bit like this (in terms of mean):
+      Fresh out of uni - 35k
+      10 years - 100k
+      20 years - 200k
+      30 years - 220k
+      40 years - 250 k
+
+      THE SALARY NUMBERS ARE ALSO EFFECTED BY 
+        GENDER - lower female
+        SUBJECT - lower arts
+  
+      then as time goes on make more and more reiculous higher values -
+
+      haveBonusPercent goes up as time goes on
+    */
     SalaryBASE: {
       // upper and lower numbers are used for calculation of annual salary which is then mutated to whatever the selected period becomes
       // we use a bell curve distribution between upper and lower numbers and then assign our values against that
@@ -2444,8 +2399,9 @@ const config = {
       meanBonus: 1000,
       upperBonus: 400000,
       // percentage of people that have a bonus
-      haveBonusPercent: 40,
+      haveBonusPercent: 20,
     },
+    /* CHANGETHIS - people work less hours as time go on */
     hoursBASE: {
       data: [
         {
@@ -2484,6 +2440,7 @@ const config = {
     },
   },
   '4-6': {
+    /* CHANGETHIS - as time goes on the qualification being a formal requirement dissapears completely but in the early days is really important */
     neededQualification: {
       type: 'percentages',
       subType: 'lookup',
@@ -2536,6 +2493,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - need to mnake sens for age group */
     jobReason: {
       type: 'percentages',
       subType: 'lookup',
@@ -2578,6 +2536,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - needs to make senses for age group (uni / college career service should be 0 for instance for anyone except 1 yr out) */
     jobDiscovery: {
       type: 'percentages',
       subType: 'lookup',
@@ -2624,6 +2583,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - linked to age - basically becomes 100% no after y years */
     previouslyEmployed: {
       type: 'percentages',
       subType: 'lookup',
@@ -2682,6 +2642,7 @@ const config = {
     },
   },
   '5-1': {
+    /* CHANGETHIS - let's make this basically go DOWN over time! */
     applyDegreeToWork: {
       type: 'percentages',
       subType: 'lookup',
@@ -2708,6 +2669,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - let's make this basically go DOWN over time! */
     applySkillsToWork: {
       type: 'percentages',
       subType: 'lookup',
@@ -2734,6 +2696,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - let's make this basically go DOWN over time! */
     applyExtraCurricularToWork: {
       type: 'percentages',
       subType: 'lookup',
@@ -2760,6 +2723,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - let's make this basically go DOWN over time! */
     contributeMeaningfullyToLife: {
       type: 'percentages',
       subType: 'lookup',
@@ -2786,6 +2750,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - let's make this basically go DOWN over time! */
     currentWorkFitsWithFuturePlans: {
       type: 'percentages',
       subType: 'lookup',
@@ -2812,6 +2777,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - let's make this basically go DOWN over time! */
     currentWorkMeaningfulAndImportant: {
       type: 'percentages',
       subType: 'lookup',
@@ -2838,6 +2804,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - let's make this basically go DOWN over time! */
     furtherStudyAdvancesCareer: {
       type: 'percentages',
       subType: 'lookup',
@@ -2864,6 +2831,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - let's make this basically go DOWN over time! */
     professionalQualificationsAdvanceCareer: {
       type: 'percentages',
       subType: 'lookup',
@@ -2892,6 +2860,7 @@ const config = {
     },
   },
   '5-2': {
+    /* CHANGETHIS - let's make this basically go UP over time with a dip in mid life crisis time (10-20 years?) */
     lifeSatisfaction: {
       type: 'percentages',
       subType: 'lookup',
@@ -2942,6 +2911,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - let's make this basically go UP over time with a dip in mid life crisis time (10-20 years?) */
     lifeWorthwhile: {
       type: 'percentages',
       subType: 'lookup',
@@ -2992,6 +2962,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - let's make this basically go UP over time with a dip in mid life crisis time (10-20 years?) */
     lifeHappy: {
       type: 'percentages',
       subType: 'lookup',
@@ -3042,6 +3013,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - let's make this basically go UP over time with a dip in mid life crisis time (10-20 years?) */
     lifeAnxious: {
       type: 'percentages',
       subType: 'lookup',
@@ -3158,6 +3130,7 @@ const config = {
     },
   },
   '5-3': {
+    /* CHANGETHIS - let's make this so don't know is the main option after 5 years with generally not likely trend */
     viewsOnCourseDifferentSubject: {
       type: 'percentages',
       subType: 'lookup',
@@ -3190,19 +3163,19 @@ const config = {
       split: [
         {
           lookup: 'Very likely',
-          split: 20,
+          split: 10,
         },
         {
           lookup: 'Likely',
-          split: 35,
+          split: 10,
         },
         {
           lookup: 'Not very likely',
-          split: 20,
+          split: 40,
         },
         {
           lookup: 'Not likely at all',
-          split: 20,
+          split: 35,
         },
         {
           lookup: 'Don\'t know',
@@ -3210,6 +3183,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - let's make this so don't know is the main option after 5 years with generally not likely trend */
     viewsOnCourseDifferentQualification: {
       type: 'percentages',
       subType: 'lookup',
@@ -3236,6 +3210,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - let's make this so don't know is the main option after 5 years with generally not likely trend */
     viewsOnCourseTotallyDifferent: {
       type: 'percentages',
       subType: 'lookup',
@@ -3262,6 +3237,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - we just need to make sure have not worked is set to 0 after 5 years with an increasing trend of don't know after 5 + years */
     viewsOnHEInnovative: {
       type: 'percentages',
       subType: 'lookup',
@@ -3288,6 +3264,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - we just need to make sure have not worked is set to 0 after 5 years with an increasing trend of don't know after 5 + years */
     viewsOnHEDifferenceInWorkplace: {
       type: 'percentages',
       subType: 'lookup',
@@ -3314,6 +3291,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - we just need to make sure have not worked is set to 0 after 5 years with an increasing trend of don't know after 5 + years */
     viewsOnHEChangeOrganisation: {
       type: 'percentages',
       subType: 'lookup',
@@ -3340,6 +3318,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - we just need to make sure have not worked is set to 0 after 5 years with an increasing trend of don't know after 5 + years */
     viewsOnHEInfluenceWork: {
       type: 'percentages',
       subType: 'lookup',
@@ -3366,6 +3345,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - we just need to make sure have not worked is set to 0 after 5 years with an increasing trend of don't know after 5 + years */
     viewsOnHEAccessJobOppts: {
       type: 'percentages',
       subType: 'lookup',
@@ -3392,6 +3372,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - we just need to make sure have not worked is set to 0 after 5 years with an increasing trend of don't know after 5 + years */
     viewsOnHEEnhanceCredibility: {
       type: 'percentages',
       subType: 'lookup',
@@ -3418,6 +3399,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - we just need to make sure have not worked is set to 0 after 5 years with an increasing trend of don't know after 5 + years */
     viewsOnHEProgressLongTerm: {
       type: 'percentages',
       subType: 'lookup',
@@ -3444,6 +3426,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - we just need to make sure have not worked is set to 0 after 5 years with an increasing trend of don't know after 5 + years */
     viewsOnHEEnhanceSocialCapeabilities: {
       type: 'percentages',
       subType: 'lookup',
@@ -3470,6 +3453,7 @@ const config = {
         },
       ],
     },
+    /* CHANGETHIS - we just need to make sure have not worked is set to 0 after 5 years with an increasing trend of don't know after 5 + years */
     viewsOnHEEnhanceQualityOfLife: {
       type: 'percentages',
       subType: 'lookup',
@@ -3498,6 +3482,7 @@ const config = {
     },
   },
   '5-4': {
+    /* CHANGETHIS - This just needs to make sense over time / year group! */
     maritalStatus: {
       type: 'percentages',
       subType: 'lookup',
