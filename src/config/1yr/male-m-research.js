@@ -1550,27 +1550,27 @@ const config = {
             split: [
               {
                 lookup: 'Undergraduate Bachelors Degree',
-                split: 60,
+                split: 0,
               },
               {
                 lookup: 'Undergraduate Masters Degree',
-                split: 10,
+                split: 0,
               },
               {
                 lookup: 'Masters',
-                split: 10,
+                split: 100,
               },
               {
                 lookup: 'Doctorate',
-                split: 15,
+                split: 0,
               },
               {
                 lookup: 'Other Degree',
-                split: 5,
+                split: 0,
               },
             ],
           },
-          /*CHANGETHIS - only applies to certain set of things*/
+          /* CHANGETHIS - only applies to certain set of things */
           mastersType: {
             type: 'percentages',
             subType: 'lookup',
@@ -1585,7 +1585,7 @@ const config = {
               },
             ],
           },
-          /*CHANGETHIS - only applies to a certain set of things and should reflect age*/
+          /* CHANGETHIS - only applies to a certain set of things and should reflect age */
           funding: {
             type: 'percentages',
             subType: 'lookup',
@@ -1633,23 +1633,23 @@ const config = {
             split: [
               {
                 lookup: '1 Year',
-                split: 5,
+                split: 50,
               },
               {
                 lookup: '2 Years',
-                split: 5,
+                split: 50,
               },
               {
                 lookup: '3 Years',
-                split: 75,
+                split: 0,
               },
               {
                 lookup: '4 Years',
-                split: 10,
+                split: 0,
               },
               {
                 lookup: 'Other',
-                split: 5,
+                split: 0,
               },
             ],
           },
@@ -1659,7 +1659,7 @@ const config = {
             subType: 'lookup',
             split: [
               // this is wierd because we are doing multiple probabilities in 1
-              /*{
+              /* {
                 lookup: 'First-class honours (1st)',
                 split: 10,
               },
@@ -1679,7 +1679,7 @@ const config = {
                 lookup: 'Ordinary degree (pass)',
                 split: 5,
               },
-              // other*/
+              // other */
               {
                 lookup: 'Distinction',
                 split: 10,
@@ -1699,28 +1699,28 @@ const config = {
             ],
           },
           /* CHANGETHIS - this depends on the type of degree they are doing and the input that we want */
-          courseType: {
-            type: 'percentages',
-            subType: 'lookup',
-            split: [
-              {
-                lookup: 'BA',
-                split: 45,
-              },
-              {
-                lookup: 'BSc',
-                split: 40,
-              },
-              {
-                lookup: 'BEng',
-                split: 10,
-              },
-              {
-                lookup: 'LBB',
-                split: 5,
-              },
-            ],
-          },
+          // courseType: {
+          //   type: 'percentages',
+          //   subType: 'lookup',
+          //   split: [
+          //     {
+          //       lookup: 'BA',
+          //       split: 45,
+          //     },
+          //     {
+          //       lookup: 'BSc',
+          //       split: 40,
+          //     },
+          //     {
+          //       lookup: 'BEng',
+          //       split: 10,
+          //     },
+          //     {
+          //       lookup: 'LBB',
+          //       split: 5,
+          //     },
+          //   ],
+          // },
         },
       },
       {
@@ -2423,10 +2423,10 @@ const config = {
       30 years - 220k
       40 years - 250 k
 
-      THE SALARY NUMBERS ARE ALSO EFFECTED BY 
+      THE SALARY NUMBERS ARE ALSO EFFECTED BY
         GENDER - lower female
         SUBJECT - lower arts
-  
+
       then as time goes on make more and more reiculous higher values -
 
       haveBonusPercent goes up as time goes on
