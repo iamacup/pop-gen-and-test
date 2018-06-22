@@ -522,7 +522,7 @@ const config = {
       ],
     },
   },
-    '2-2': {
+  '2-2': {
     anotherUniversity: {
       type: 'percentages',
       subType: 'lookup',
@@ -534,7 +534,7 @@ const config = {
       ],
     },
   },
-    '2-4': {
+  '2-4': {
     parentsUniversity: {
       type: 'percentages',
       subType: 'lookup',
@@ -568,7 +568,7 @@ const config = {
       ],
     },
   },
-    '3-2': {
+  '3-2': {
     ukPreUniStudy: {
       type: 'percentages',
       subType: 'lookup',
@@ -703,7 +703,7 @@ const config = {
       ],
     },
   },
-    '3-1': {
+  '3-1': {
     outreachItems: {
       type: 'percentages',
       subType: 'lookup',

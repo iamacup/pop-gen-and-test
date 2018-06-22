@@ -975,7 +975,7 @@ const postcodeSplitArrWorkLocation = [
 ];
 
 const config = {
-'1-2': {
+  '1-2': {
     /* CHANGETHIS - increases SLIGHTLY over age groups - base 90 down to 70 - this is the 'do they currently live in the uk' question */
     liveInUK: {
       type: 'percentages',
@@ -993,7 +993,7 @@ const config = {
       split: postcodeSplitArr,
     },
   },
-    '4-1': {
+  '4-1': {
     /* CHANGETHIS - more people work full time as time goes on - towards teh tail end we want a few retired people */
     graduateDestination: {
       type: 'percentages',
@@ -1034,7 +1034,7 @@ const config = {
       ],
     },
   },
-    '4-2': {
+  '4-2': {
     company: {
       companyNames: [
         'MVF',
@@ -1218,7 +1218,7 @@ const config = {
       ],
     },
   },
-    '4-3': {
+  '4-3': {
     /* CHANGETHIS - high yes at early times - virtually zero at 20+ with a very fast drop off at 10 years (like no more than 10 % at 10 years) */
     firstCareerJob: {
       type: 'percentages',
@@ -1273,7 +1273,7 @@ const config = {
       ],
     },
   },
-    '4-4': {
+  '4-4': {
     /* CHANGETHIS - let's have this go up to like 80/20 as time goes on on a straight line */
     workLocationUKTest: {
       type: 'percentages',
@@ -1311,7 +1311,7 @@ const config = {
       ],
     },
   },
-    '5-2': {
+  '5-2': {
     /* CHANGETHIS - let's make this basically go UP over time with a dip in mid life crisis time (10-20 years?) */
     lifeSatisfaction: {
       type: 'percentages',
@@ -1581,7 +1581,7 @@ const config = {
       ],
     },
   },
-    '5-3': {
+  '5-3': {
     /* CHANGETHIS - let's make this so don't know is the main option after 5 years with generally not likely trend */
     viewsOnCourseDifferentSubject: {
       type: 'percentages',
@@ -1933,7 +1933,7 @@ const config = {
       ],
     },
   },
-    '5-4': {
+  '5-4': {
     /* CHANGETHIS - This just needs to make sense over time / year group! */
     maritalStatus: {
       type: 'percentages',
@@ -1966,6 +1966,6 @@ const config = {
       ],
     },
   },
-}
+};
 
 module.exports = config;

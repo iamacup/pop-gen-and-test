@@ -12,8 +12,8 @@
 // we then specify the data for each loop inside of the qualifications array like we would for any other (Accepts normal arguments)
 
 const _ = require('lodash');
-const staticData = require('./1yrData/staticData.js')
-const yearGroupData = require('./1yrData/yearGroupData.js')
+const staticData = require('./1yrData/staticData.js');
+const yearGroupData = require('./1yrData/yearGroupData.js');
 
 const config = {
   '1-3': {
@@ -40,7 +40,7 @@ const config = {
     age: {
       type: 'dates',
       split: [
-              {
+        {
           yearsAgo: 21,
           month: 'rand',
           frequency: 95,
@@ -520,7 +520,7 @@ const config = {
     SalaryBASE: {
       // upper and lower numbers are used for calculation of annual salary which is then mutated to whatever the selected period becomes
       // we use a bell curve distribution between upper and lower numbers and then assign our values against that
-       lowerSalary: 11000,
+      lowerSalary: 11000,
       meanSalary: 38500,
       upperSalary: 55000,
       lowerBonus: 0,
@@ -989,5 +989,5 @@ const config = {
   },
 };
 
-const thing = _.merge(staticData, config, yearGroupData)
+const thing = _.merge(staticData, config, yearGroupData);
 module.exports = thing;

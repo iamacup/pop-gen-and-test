@@ -12,8 +12,8 @@
 // we then specify the data for each loop inside of the qualifications array like we would for any other (Accepts normal arguments)
 
 const _ = require('lodash');
-const staticData = require('./1yrData/staticData.js')
-const yearGroupData = require('./1yrData/yearGroupData.js')
+const staticData = require('./1yrData/staticData.js');
+const yearGroupData = require('./1yrData/yearGroupData.js');
 
 const config = {
   '1-3': {
@@ -40,7 +40,7 @@ const config = {
     age: {
       type: 'dates',
       split: [
-       {
+        {
           yearsAgo: 21,
           month: 'rand',
           frequency: 95,
@@ -989,5 +989,5 @@ const config = {
   },
 };
 
-const thing = _.merge(staticData, config, yearGroupData)
+const thing = _.merge(staticData, config, yearGroupData);
 module.exports = thing;
