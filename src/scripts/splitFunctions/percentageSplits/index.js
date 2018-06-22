@@ -16,10 +16,14 @@ const getPercentage = (answers) => {
 
 const gettingAllValues = (answers, options, count) => {
   // adding a random option into the answers to hold the remaining percentage.
+  // console.log(answers[0].answer);
+
   let newAnswers = [];
   const randomIndex = Math.floor(Math.random() * (options.length - 1)) + 0;
   if (count < 100) {
-    answers.push({ answer: options[randomIndex], split: 100 - count });
+    if (answers[0].answer !== undefined) answers.push({ answer: options[randomIndex], split: 100 - count });
+    else answers.push({ lookup: options[randomIndex].lookup, split: 100 - count });
+
     newAnswers = answers;
   } else {
     answers.forEach((element) => {
@@ -42,7 +46,7 @@ const handlePercentageSplits = async (question, config, friendlyName, answer, lo
 
   let answers = [];
   const options = [];
-
+  console.log(friendlyName, '********');
 
   if (typeof config[friendlyName] !== 'undefined' && config[friendlyName].subType === 'lookup') {
     // Populating options with left over options, and answers with real answer data.
@@ -71,6 +75,7 @@ const handlePercentageSplits = async (question, config, friendlyName, answer, lo
       if (option.split > value) checkingAnswers.push(option);
       else options.push(option);
     });
+
 
     if (checkingAnswers.length === 0) {
       // if all the options have the same weight.
@@ -104,6 +109,8 @@ const handlePercentageSplits = async (question, config, friendlyName, answer, lo
     console.log(`picking last - percentage split - ${step} - ${friendlyName}`);
     finalAnswer = answers[0];
   }
+
+  // if (friendlyName === 'workLocationDetail') console.log(question, finalAnswer);
 
   // answer it and get any followon stuff
   const followon = await answer.addAnswer(question.questionID, finalAnswer.optionID, finalAnswer.optionValue, friendlyName, localInterface, step);
