@@ -1001,15 +1001,15 @@ const config = {
       split: [
         {
           lookup: 'Working full-time, including self-employed/freelance, voluntary or other unpaid work, developing a professional portfolio/creative practice or on an internship/placement',
-          split: 64,
+          split: 65,
         },
         {
           lookup: 'Working part-time, including self-employed/freelance, voluntary or other unpaid work, developing a professional portfolio/creative practice or on an internship/placement',
-          split: 12,
+          split: 10,
         },
         {
           lookup: 'Due to start a job in the next month',
-          split: 3,
+          split: 4,
         },
         {
           lookup: 'Engaged in full-time further study, training or research',
@@ -1017,7 +1017,7 @@ const config = {
         },
         {
           lookup: 'Engaged in part-time further study, training or research',
-          split: 3,
+          split: 4,
         },
         {
           lookup: 'Taking time out in order to travel',
@@ -1029,7 +1029,7 @@ const config = {
         },
         {
           lookup: 'Unemployed',
-          split: 4,
+          split: 3,
         },
       ],
     },
@@ -1173,11 +1173,11 @@ const config = {
       split: [
         {
           lookup: 'Self-employed / freelance',
-          split: 1,
+          split: 2,
         },
         {
           lookup: 'Starting up own business',
-          split: 1,
+          split: 2,
         },
         {
           lookup: 'On a permanent or open-ended contract',
@@ -1189,7 +1189,7 @@ const config = {
         },
         {
           lookup: 'On a fixed-term contract lasting less than 12 months',
-          split: 6,
+          split: 5,
         },
         {
           lookup: 'Voluntary work',
@@ -1205,7 +1205,7 @@ const config = {
         },
         {
           lookup: 'Temping (including supply teaching)',
-          split: 4,
+          split: 3,
         },
         {
           lookup: 'On a zero hours contract',
@@ -1226,11 +1226,11 @@ const config = {
       split: [
         {
           lookup: 'Yes',
-          split: 95,
+          split: 85,
         },
         {
           lookup: 'No',
-          split: 5,
+          split: 15,
         },
       ],
     },
@@ -1281,11 +1281,11 @@ const config = {
       split: [
         {
           lookup: 'Yes',
-          split: 90,
+          split: 88,
         },
         {
           lookup: 'No',
-          split: 10,
+          split: 12,
         },
       ],
     },
@@ -1301,12 +1301,17 @@ const config = {
         {
           yearsAgo: 0,
           month: 'rand',
-          frequency: 80,
+          frequency: 60,
         },
         {
           yearsAgo: 1,
           month: 'rand',
-          frequency: 20,
+          frequency: 30,
+        },
+        {
+          yearsAgo: 2,
+          month: 'rand',
+          frequency: 10,
         },
       ],
     },
@@ -1589,7 +1594,7 @@ const config = {
       split: [
         {
           lookup: 'Very likely',
-          split: 19,
+          split: 15,
         },
         {
           lookup: 'Likely',
@@ -1597,15 +1602,15 @@ const config = {
         },
         {
           lookup: 'Not very likely',
-          split: 22,
+          split: 25,
         },
         {
           lookup: 'Not likely at all',
-          split: 22,
+          split: 20,
         },
         {
           lookup: 'Don\'t know',
-          split: 7,
+          split: 10,
         },
       ],
     },
@@ -1642,7 +1647,7 @@ const config = {
       split: [
         {
           lookup: 'Very likely',
-          split: 19,
+          split: 15,
         },
         {
           lookup: 'Likely',
@@ -1650,15 +1655,15 @@ const config = {
         },
         {
           lookup: 'Not very likely',
-          split: 22,
+          split: 25,
         },
         {
           lookup: 'Not likely at all',
-          split: 22,
+          split: 20,
         },
         {
           lookup: 'Don\'t know',
-          split: 7,
+          split: 10,
         },
       ],
     },
@@ -1669,7 +1674,7 @@ const config = {
       split: [
         {
           lookup: 'Very likely',
-          split: 19,
+          split: 15,
         },
         {
           lookup: 'Likely',
@@ -1677,15 +1682,15 @@ const config = {
         },
         {
           lookup: 'Not very likely',
-          split: 22,
+          split: 25,
         },
         {
           lookup: 'Not likely at all',
-          split: 22,
+          split: 20,
         },
         {
           lookup: 'Don\'t know',
-          split: 7,
+          split: 10,
         },
       ],
     },
@@ -1696,23 +1701,23 @@ const config = {
       split: [
         {
           lookup: 'A great extent',
-          split: 19,
+          split: 18,
         },
         {
           lookup: 'Some extent',
-          split: 34,
+          split: 30,
         },
         {
           lookup: 'Not at all',
-          split: 19,
+          split: 20,
         },
         {
           lookup: 'Don\'t know',
-          split: 25,
+          split: 30,
         },
         {
           lookup: 'Have not worked since finishing course',
-          split: 3,
+          split: 2,
         },
       ],
     },
@@ -1723,23 +1728,23 @@ const config = {
       split: [
         {
           lookup: 'A great extent',
-          split: 19,
+          split: 18,
         },
         {
           lookup: 'Some extent',
-          split: 34,
+          split: 30,
         },
         {
           lookup: 'Not at all',
-          split: 19,
+          split: 20,
         },
         {
           lookup: 'Don\'t know',
-          split: 25,
+          split: 30,
         },
         {
           lookup: 'Have not worked since finishing course',
-          split: 3,
+          split: 2,
         },
       ],
     },
@@ -1750,23 +1755,23 @@ const config = {
       split: [
         {
           lookup: 'A great extent',
-          split: 19,
+          split: 18,
         },
         {
           lookup: 'Some extent',
-          split: 34,
+          split: 30,
         },
         {
           lookup: 'Not at all',
-          split: 19,
+          split: 20,
         },
         {
           lookup: 'Don\'t know',
-          split: 25,
+          split: 30,
         },
         {
           lookup: 'Have not worked since finishing course',
-          split: 3,
+          split: 2,
         },
       ],
     },
@@ -1777,23 +1782,23 @@ const config = {
       split: [
         {
           lookup: 'A great extent',
-          split: 19,
+          split: 18,
         },
         {
           lookup: 'Some extent',
-          split: 34,
+          split: 30,
         },
         {
           lookup: 'Not at all',
-          split: 19,
+          split: 20,
         },
         {
           lookup: 'Don\'t know',
-          split: 25,
+          split: 30,
         },
         {
           lookup: 'Have not worked since finishing course',
-          split: 3,
+          split: 2,
         },
       ],
     },
@@ -1804,23 +1809,23 @@ const config = {
       split: [
         {
           lookup: 'A great extent',
-          split: 19,
+          split: 18,
         },
         {
           lookup: 'Some extent',
-          split: 34,
+          split: 30,
         },
         {
           lookup: 'Not at all',
-          split: 19,
+          split: 20,
         },
         {
           lookup: 'Don\'t know',
-          split: 25,
+          split: 30,
         },
         {
           lookup: 'Have not worked since finishing course',
-          split: 3,
+          split: 2,
         },
       ],
     },
@@ -1831,23 +1836,23 @@ const config = {
       split: [
         {
           lookup: 'A great extent',
-          split: 19,
+          split: 18,
         },
         {
           lookup: 'Some extent',
-          split: 34,
+          split: 30,
         },
         {
           lookup: 'Not at all',
-          split: 19,
+          split: 20,
         },
         {
           lookup: 'Don\'t know',
-          split: 25,
+          split: 30,
         },
         {
           lookup: 'Have not worked since finishing course',
-          split: 3,
+          split: 2,
         },
       ],
     },
@@ -1858,23 +1863,23 @@ const config = {
       split: [
         {
           lookup: 'A great extent',
-          split: 19,
+          split: 18,
         },
         {
           lookup: 'Some extent',
-          split: 34,
+          split: 30,
         },
         {
           lookup: 'Not at all',
-          split: 19,
+          split: 20,
         },
         {
           lookup: 'Don\'t know',
-          split: 25,
+          split: 30,
         },
         {
           lookup: 'Have not worked since finishing course',
-          split: 3,
+          split: 2,
         },
       ],
     },
@@ -1885,23 +1890,23 @@ const config = {
       split: [
         {
           lookup: 'A great extent',
-          split: 19,
+          split: 18,
         },
         {
           lookup: 'Some extent',
-          split: 34,
+          split: 30,
         },
         {
           lookup: 'Not at all',
-          split: 19,
+          split: 20,
         },
         {
           lookup: 'Don\'t know',
-          split: 25,
+          split: 30,
         },
         {
           lookup: 'Have not worked since finishing course',
-          split: 3,
+          split: 2,
         },
       ],
     },
@@ -1912,23 +1917,23 @@ const config = {
       split: [
         {
           lookup: 'A great extent',
-          split: 19,
+          split: 18,
         },
         {
           lookup: 'Some extent',
-          split: 34,
+          split: 30,
         },
         {
           lookup: 'Not at all',
-          split: 19,
+          split: 20,
         },
         {
           lookup: 'Don\'t know',
-          split: 25,
+          split: 30,
         },
         {
           lookup: 'Have not worked since finishing course',
-          split: 3,
+          split: 2,
         },
       ],
     },
