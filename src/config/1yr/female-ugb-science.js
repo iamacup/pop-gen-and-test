@@ -354,19 +354,19 @@ const config = {
       split: [
         {
           lookup: 'Very well',
-          split: 10,
+          split: 30,
         },
         {
           lookup: 'Well',
-          split: 10,
+          split: 20,
         },
         {
           lookup: 'Not very well',
-          split: 50,
+          split: 30,
         },
         {
           lookup: 'Not at all',
-          split: 20,
+          split: 10,
         },
         {
           lookup: 'Can\'t tell',
@@ -381,15 +381,15 @@ const config = {
       split: [
         {
           lookup: 'Very well',
-          split: 10,
+          split: 40,
         },
         {
           lookup: 'Well',
-          split: 15,
+          split: 10,
         },
         {
           lookup: 'Not very well',
-          split: 40,
+          split: 20,
         },
         {
           lookup: 'Not at all',
@@ -397,7 +397,7 @@ const config = {
         },
         {
           lookup: 'Can\'t tell',
-          split: 10,
+          split: 15,
         },
       ],
     },
@@ -408,11 +408,11 @@ const config = {
       split: [
         {
           lookup: 'Very well',
-          split: 10,
+          split: 20,
         },
         {
           lookup: 'Well',
-          split: 15,
+          split: 20,
         },
         {
           lookup: 'Not very well',
@@ -420,11 +420,11 @@ const config = {
         },
         {
           lookup: 'Not at all',
-          split: 30,
+          split: 20,
         },
         {
           lookup: 'Can\'t tell',
-          split: 25,
+          split: 20,
         },
       ],
     },
@@ -777,6 +777,33 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
+          split: 20,
+        },
+        {
+          lookup: 'Agree',
+          split: 10,
+        },
+        {
+          lookup: 'Neither agree or disagree',
+          split: 30,
+        },
+        {
+          lookup: 'Disagree',
+          split: 20,
+        },
+        {
+          lookup: 'Strongly disagree',
+          split: 20,
+        },
+      ],
+    },
+    /* CHANGETHIS - let's make this basically go DOWN over time! */
+    applySkillsToWork: {
+      type: 'percentages',
+      subType: 'lookup',
+      split: [
+        {
+          lookup: 'Strongly agree',
           split: 15,
         },
         {
@@ -798,40 +825,13 @@ const config = {
       ],
     },
     /* CHANGETHIS - let's make this basically go DOWN over time! */
-    applySkillsToWork: {
-      type: 'percentages',
-      subType: 'lookup',
-      split: [
-        {
-          lookup: 'Strongly agree',
-          split: 20,
-        },
-        {
-          lookup: 'Agree',
-          split: 10,
-        },
-        {
-          lookup: 'Neither agree or disagree',
-          split: 30,
-        },
-        {
-          lookup: 'Disagree',
-          split: 20,
-        },
-        {
-          lookup: 'Strongly disagree',
-          split: 20,
-        },
-      ],
-    },
-    /* CHANGETHIS - let's make this basically go DOWN over time! */
     applyExtraCurricularToWork: {
       type: 'percentages',
       subType: 'lookup',
       split: [
         {
           lookup: 'Strongly agree',
-          split: 20,
+          split: 15,
         },
         {
           lookup: 'Agree',
@@ -843,7 +843,7 @@ const config = {
         },
         {
           lookup: 'Disagree',
-          split: 20,
+          split: 25,
         },
         {
           lookup: 'Strongly disagree',
@@ -858,7 +858,7 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 20,
+          split: 15,
         },
         {
           lookup: 'Agree',
@@ -870,7 +870,7 @@ const config = {
         },
         {
           lookup: 'Disagree',
-          split: 20,
+          split: 25,
         },
         {
           lookup: 'Strongly disagree',
@@ -910,9 +910,9 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-        {
+         {
           lookup: 'Strongly agree',
-          split: 20,
+          split: 15,
         },
         {
           lookup: 'Agree',
@@ -924,7 +924,7 @@ const config = {
         },
         {
           lookup: 'Disagree',
-          split: 20,
+          split: 25,
         },
         {
           lookup: 'Strongly disagree',
@@ -939,7 +939,7 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 20,
+          split: 15,
         },
         {
           lookup: 'Agree',
@@ -951,7 +951,7 @@ const config = {
         },
         {
           lookup: 'Disagree',
-          split: 20,
+          split: 25,
         },
         {
           lookup: 'Strongly disagree',
@@ -966,7 +966,7 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 20,
+          split: 15,
         },
         {
           lookup: 'Agree',
@@ -978,7 +978,7 @@ const config = {
         },
         {
           lookup: 'Disagree',
-          split: 20,
+          split: 25,
         },
         {
           lookup: 'Strongly disagree',

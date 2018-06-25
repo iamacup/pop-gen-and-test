@@ -408,23 +408,23 @@ const config = {
       split: [
         {
           lookup: 'Very well',
-          split: 20,
+          split: 50,
         },
         {
           lookup: 'Well',
-          split: 20,
+          split: 15,
         },
         {
           lookup: 'Not very well',
-          split: 20,
+          split: 15,
         },
         {
           lookup: 'Not at all',
-          split: 20,
+          split: 10,
         },
         {
           lookup: 'Can\'t tell',
-          split: 20,
+          split: 10,
         },
       ],
     },
@@ -525,7 +525,7 @@ const config = {
       upperSalary: 50000,
       lowerBonus: 0,
       meanBonus: 100,
-      upperBonus: 10000,
+      upperBonus: 1000,
       // percentage of people that have a bonus
       haveBonusPercent: 20,
     },
@@ -889,7 +889,7 @@ const config = {
         },
         {
           lookup: 'Agree',
-          split: 15,
+          split: 10,
         },
         {
           lookup: 'Neither agree or disagree',
@@ -897,7 +897,7 @@ const config = {
         },
         {
           lookup: 'Disagree',
-          split: 15,
+          split: 20,
         },
         {
           lookup: 'Strongly disagree',
