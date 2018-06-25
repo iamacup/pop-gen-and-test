@@ -43,17 +43,17 @@ const config = {
         {
           yearsAgo: 24,
           month: 'rand',
-          frequency: 85,
+          frequency: 75,
         },
         {
           yearsAgo: 25,
           month: 'rand',
-          frequency: 5,
+          frequency: 8,
         },
         {
           yearsAgo: 26,
           month: 'rand',
-          frequency: 3,
+          frequency: 7,
         },
         {
           yearsAgo: 27,
@@ -73,7 +73,7 @@ const config = {
         {
           yearsAgo: 30,
           month: 'rand',
-          frequency: 1,
+          frequency: 2,
         },
         {
           yearsAgo: 31,
@@ -83,27 +83,12 @@ const config = {
         {
           yearsAgo: 32,
           month: 'rand',
-          frequency: 2,
+          frequency: 1,
         },
         {
           yearsAgo: 33,
           month: 'rand',
-          frequency: 2,
-        },
-        {
-          yearsAgo: 34,
-          month: 'rand',
-          frequency: 2,
-        },
-        {
-          yearsAgo: 35,
-          month: 'rand',
-          frequency: 2,
-        },
-        {
-          yearsAgo: 36,
-          month: 'rand',
-          frequency: 2,
+          frequency: 1,
         },
       ],
     },
@@ -196,17 +181,21 @@ const config = {
             type: 'percentages',
             subType: 'lookup',
             split: [
-             {
+                {
                 lookup: '2016',
-                split: 100,
+                split: 25,
               },
               {
                 lookup: '2015',
-                split: 100,
+                split: 25,
               },
-                            {
+              {
                 lookup: '2014',
-                split: 100,
+                split: 25,
+              },
+              {
+                lookup: '2013',
+                split: 25,
               },
             ],
           },
@@ -412,7 +401,7 @@ const config = {
       split: [
         {
           lookup: 'Very well',
-          split: 30,
+          split: 25,
         },
         {
           lookup: 'Well',
@@ -424,11 +413,11 @@ const config = {
         },
         {
           lookup: 'Not at all',
-          split: 13,
+          split: 15,
         },
         {
           lookup: 'Can\'t tell',
-          split: 12,
+          split: 15,
         },
       ],
     },
@@ -439,11 +428,11 @@ const config = {
       split: [
         {
           lookup: 'Very well',
-          split: 45,
+          split: 40,
         },
         {
           lookup: 'Well',
-          split: 10,
+          split: 15,
         },
         {
           lookup: 'Not very well',
@@ -466,7 +455,7 @@ const config = {
       split: [
         {
           lookup: 'Very well',
-          split: 15,
+          split: 30,
         },
         {
           lookup: 'Well',
@@ -474,15 +463,15 @@ const config = {
         },
         {
           lookup: 'Not very well',
-          split: 25,
+          split: 15,
         },
         {
           lookup: 'Not at all',
-          split: 22,
+          split: 20,
         },
         {
           lookup: 'Can\'t tell',
-          split: 23,
+          split: 20,
         },
       ],
     },
@@ -578,12 +567,12 @@ const config = {
     SalaryBASE: {
       // upper and lower numbers are used for calculation of annual salary which is then mutated to whatever the selected period becomes
       // we use a bell curve distribution between upper and lower numbers and then assign our values against that
-      lowerSalary: 23000,
-      meanSalary: 42000,
-      upperSalary: 60000,
+     lowerSalary: 30800,
+      meanSalary: 46200,
+      upperSalary: 71500,
       lowerBonus: 0,
       meanBonus: 400,
-      upperBonus: 20000,
+      upperBonus: 2000,
       // percentage of people that have a bonus
       haveBonusPercent: 20,
     },
@@ -592,7 +581,7 @@ const config = {
       data: [
         {
           split: 50,
-          contract: 38,
+          contract: 40,
           contractVarianceUpPercent: 0,
           contractVarianceDownPercent: 0,
           actualVarianceUpPercent: 0,
@@ -600,10 +589,10 @@ const config = {
         },
         {
           split: 15,
-          contract: 35,
-          contractVarianceUpPercent: 35,
+          contract: 40,
+          contractVarianceUpPercent: 40,
           contractVarianceDownPercent: 0,
-          actualVarianceUpPercent: 35,
+          actualVarianceUpPercent: 40,
           actualVarianceDownPercent: 40,
         },
         {
@@ -633,7 +622,7 @@ const config = {
       split: [
         {
           lookup: 'Yes, the qualification was a formal requirement',
-          split: 70,
+          split: 65,
         },
         {
           lookup: 'Yes, while the qualification was not a formal requirment it did give me an advantage',
@@ -645,7 +634,7 @@ const config = {
         },
         {
           lookup: 'Don\'t know',
-          split: 10,
+          split: 15,
         },
       ],
     },
@@ -776,19 +765,19 @@ const config = {
       split: [
         {
           lookup: 'Yes, before my programme of study',
-          split: 15,
+          split: 10,
         },
         {
           lookup: 'Yes during my programme of study',
-          split: 25,
+          split: 15,
         },
         {
           lookup: 'Yes, before and during my programme of study',
-          split: 25,
+          split: 15,
         },
         {
           lookup: 'No',
-          split: 35,
+          split: 60,
         },
       ],
     },
@@ -835,7 +824,7 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 15,
+          split: 10,
         },
         {
           lookup: 'Agree',
@@ -843,7 +832,7 @@ const config = {
         },
         {
           lookup: 'Neither agree or disagree',
-          split: 25,
+          split: 30,
         },
         {
           lookup: 'Disagree',
@@ -862,7 +851,7 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 15,
+          split: 10,
         },
         {
           lookup: 'Agree',
@@ -870,7 +859,7 @@ const config = {
         },
         {
           lookup: 'Neither agree or disagree',
-          split: 25,
+          split: 30,
         },
         {
           lookup: 'Disagree',
@@ -889,7 +878,7 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 15,
+          split: 10,
         },
         {
           lookup: 'Agree',
@@ -897,7 +886,7 @@ const config = {
         },
         {
           lookup: 'Neither agree or disagree',
-          split: 25,
+          split: 30,
         },
         {
           lookup: 'Disagree',
@@ -916,7 +905,7 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 15,
+          split: 10,
         },
         {
           lookup: 'Agree',
@@ -924,7 +913,7 @@ const config = {
         },
         {
           lookup: 'Neither agree or disagree',
-          split: 25,
+          split: 30,
         },
         {
           lookup: 'Disagree',
@@ -943,23 +932,23 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 15,
+          split: 10,
         },
         {
           lookup: 'Agree',
-          split: 12,
+          split: 5,
         },
         {
           lookup: 'Neither agree or disagree',
-          split: 26,
+          split: 30,
         },
         {
           lookup: 'Disagree',
-          split: 22,
+          split: 25,
         },
         {
           lookup: 'Strongly disagree',
-          split: 25,
+          split: 30,
         },
       ],
     },
@@ -970,7 +959,7 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 15,
+          split: 10,
         },
         {
           lookup: 'Agree',
@@ -978,15 +967,15 @@ const config = {
         },
         {
           lookup: 'Neither agree or disagree',
-          split: 28,
+          split: 30,
         },
         {
           lookup: 'Disagree',
-          split: 26,
+          split: 25,
         },
         {
           lookup: 'Strongly disagree',
-          split: 26,
+          split: 30,
         },
       ],
     },
@@ -997,7 +986,7 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 15,
+          split: 10,
         },
         {
           lookup: 'Agree',
@@ -1005,15 +994,15 @@ const config = {
         },
         {
           lookup: 'Neither agree or disagree',
-          split: 28,
+          split: 30,
         },
         {
           lookup: 'Disagree',
-          split: 26,
+          split: 25,
         },
         {
           lookup: 'Strongly disagree',
-          split: 26,
+          split: 30,
         },
       ],
     },
@@ -1024,7 +1013,7 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 15,
+          split: 10,
         },
         {
           lookup: 'Agree',
@@ -1032,15 +1021,15 @@ const config = {
         },
         {
           lookup: 'Neither agree or disagree',
-          split: 28,
+          split: 30,
         },
         {
           lookup: 'Disagree',
-          split: 26,
+          split: 25,
         },
         {
           lookup: 'Strongly disagree',
-          split: 26,
+          split: 30,
         },
       ],
     },

@@ -12,8 +12,8 @@
 // we then specify the data for each loop inside of the qualifications array like we would for any other (Accepts normal arguments)
 
 const _ = require('lodash');
-const staticData = require('./3yrData/staticData.js');
-const yearGroupData = require('./3yrData/yearGroupData.js');
+const staticData = require('./11yrData/staticData.js');
+const yearGroupData = require('./11yrData/yearGroupData.js');
 
 const config = {
   '1-3': {
@@ -40,53 +40,133 @@ const config = {
     age: {
       type: 'dates',
       split: [
-         {
-          yearsAgo: 24,
-          month: 'rand',
-          frequency: 75,
-        },
-        {
-          yearsAgo: 25,
-          month: 'rand',
-          frequency: 8,
-        },
-        {
-          yearsAgo: 26,
-          month: 'rand',
-          frequency: 7,
-        },
-        {
-          yearsAgo: 27,
-          month: 'rand',
-          frequency: 2,
-        },
-        {
-          yearsAgo: 28,
-          month: 'rand',
-          frequency: 1,
-        },
-        {
-          yearsAgo: 29,
-          month: 'rand',
-          frequency: 1,
-        },
-        {
-          yearsAgo: 30,
-          month: 'rand',
-          frequency: 2,
-        },
         {
           yearsAgo: 31,
           month: 'rand',
-          frequency: 2,
+          frequency: 5,
         },
         {
           yearsAgo: 32,
           month: 'rand',
-          frequency: 1,
+          frequency: 5,
         },
         {
           yearsAgo: 33,
+          month: 'rand',
+          frequency: 5,
+        },
+        {
+          yearsAgo: 34,
+          month: 'rand',
+          frequency: 5,
+        },
+        {
+          yearsAgo: 35,
+          month: 'rand',
+          frequency: 5,
+        },
+        {
+          yearsAgo: 40,
+          month: 'rand',
+          frequency: 5,
+        },
+        {
+          yearsAgo: 41,
+          month: 'rand',
+          frequency: 5,
+        },
+        {
+          yearsAgo: 42,
+          month: 'rand',
+          frequency: 5,
+        },
+        {
+          yearsAgo: 43,
+          month: 'rand',
+          frequency: 5,
+        },
+        {
+          yearsAgo: 44,
+          month: 'rand',
+          frequency: 5,
+        },
+        {
+          yearsAgo: 45,
+          month: 'rand',
+          frequency: 5,
+        },
+        {
+          yearsAgo: 46,
+          month: 'rand',
+          frequency: 5,
+        },
+        {
+          yearsAgo: 47,
+          month: 'rand',
+          frequency: 5,
+        },
+        {
+          yearsAgo: 48,
+          month: 'rand',
+          frequency: 5,
+        },
+        {
+          yearsAgo: 49,
+          month: 'rand',
+          frequency: 4,
+        },
+        {
+          yearsAgo: 50,
+          month: 'rand',
+          frequency: 4,
+        },
+        {
+          yearsAgo: 51,
+          month: 'rand',
+          frequency: 4,
+        },
+        {
+          yearsAgo: 52,
+          month: 'rand',
+          frequency: 4,
+        },
+        {
+          yearsAgo: 53,
+          month: 'rand',
+          frequency: 4,
+        },
+        {
+          yearsAgo: 54,
+          month: 'rand',
+          frequency: 4,
+        },
+        {
+          yearsAgo: 55,
+          month: 'rand',
+          frequency: 1,
+        },
+        {
+          yearsAgo: 56,
+          month: 'rand',
+          frequency: 1,
+        },
+        {
+          yearsAgo: 57,
+          month: 'rand',
+          frequency: 1,
+        },
+        {
+          yearsAgo: 58,
+          month: 'rand',
+          frequency: 1,
+        },
+        {
+          yearsAgo: 59,
+          month: 'rand',
+          frequency: 1,
+        },
+        {
+          yearsAgo: 60,
           month: 'rand',
           frequency: 1,
         },
@@ -181,21 +261,85 @@ const config = {
             type: 'percentages',
             subType: 'lookup',
             split: [
-              {
-                lookup: '2016',
-                split: 25,
+{
+                lookup: '2007',
+                split: 5,
               },
               {
-                lookup: '2015',
-                split: 25,
+                lookup: '2006',
+                split: 5,
               },
               {
-                lookup: '2014',
-                split: 25,
+                lookup: '2005',
+                split: 5,
               },
               {
-                lookup: '2013',
-                split: 25,
+                lookup: '2004',
+                split: 5,
+              },
+              {
+                lookup: '2003',
+                split: 5,
+              },
+              {
+                lookup: '2002',
+                split: 5,
+              },
+              {
+                lookup: '2001',
+                split: 5,
+              },
+              {
+                lookup: '2000',
+                split: 5,
+              },
+              {
+                lookup: '1999',
+                split: 5,
+              },
+              {
+                lookup: '1998',
+                split: 5,
+              },
+              {
+                lookup: '1997',
+                split: 5,
+              },
+              {
+                lookup: '1996',
+                split: 5,
+              },
+              {
+                lookup: '1995',
+                split: 5,
+              },
+              {
+                lookup: '1994',
+                split: 5,
+              },
+              {
+                lookup: '1993',
+                split: 5,
+              },
+              {
+                lookup: '1992',
+                split: 5,
+              },
+              {
+                lookup: '1991',
+                split: 5,
+              },
+              {
+                lookup: '1990',
+                split: 5,
+              },
+              {
+                lookup: '1989',
+                split: 5,
+              },
+              {
+                lookup: '1988',
+                split: 5,
               },
             ],
           },
@@ -206,7 +350,7 @@ const config = {
             split: [
               {
                 lookup: 'Undergraduate Bachelors Degree',
-                split: 0,
+                split: 100,
               },
               {
                 lookup: 'Undergraduate Masters Degree',
@@ -214,7 +358,7 @@ const config = {
               },
               {
                 lookup: 'Masters',
-                split: 100,
+                split: 0,
               },
               {
                 lookup: 'Doctorate',
@@ -233,11 +377,11 @@ const config = {
             split: [
               {
                 lookup: 'Taught Masters',
-                split: 0,
+                split: 5,
               },
               {
                 lookup: 'Research Masters',
-                split: 100,
+                split: 80,
               },
             ],
           },
@@ -289,19 +433,19 @@ const config = {
             split: [
               {
                 lookup: '1 Year',
-                split: 50,
+                split: 0,
               },
               {
                 lookup: '2 Years',
-                split: 50,
+                split: 0,
               },
               {
                 lookup: '3 Years',
-                split: 0,
+                split: 95,
               },
               {
                 lookup: '4 Years',
-                split: 0,
+                split: 5,
               },
               {
                 lookup: 'Other',
@@ -315,13 +459,13 @@ const config = {
             subType: 'lookup',
             split: [
               // this is wierd because we are doing multiple probabilities in 1
-              /* {
+              {
                 lookup: 'First-class honours (1st)',
                 split: 10,
               },
               {
                 lookup: 'Second-class honours, upper division (2:1)',
-                split: 60,
+                split: 55,
               },
               {
                 lookup: 'Second-class honours, lower division (2:2)',
@@ -335,48 +479,48 @@ const config = {
                 lookup: 'Ordinary degree (pass)',
                 split: 5,
               },
-              // other */
+              // other
+              // {
+              //   lookup: 'Distinction',
+              //   split: 10,
+              // },
+              // {
+              //   lookup: 'Merrit',
+              //   split: 20,
+              // },
+              // {
+              //   lookup: 'Pass',
+              //   split: 60,
+              // },
+              // {
+              //   lookup: 'Fail',
+              //   split: 10,
+              // },
+            ],
+          },
+          /* REMOVETHIS - this depends on the type of degree they are doing and the input that we want */
+          courseType: {
+            type: 'percentages',
+            subType: 'lookup',
+            split: [
               {
-                lookup: 'Distinction',
+                lookup: 'BA',
+                split: 0,
+              },
+              {
+                lookup: 'BSc',
+                split: 80,
+              },
+              {
+                lookup: 'BEng',
                 split: 10,
               },
               {
-                lookup: 'Merrit',
-                split: 20,
-              },
-              {
-                lookup: 'Pass',
-                split: 60,
-              },
-              {
-                lookup: 'Fail',
+                lookup: 'LBB',
                 split: 10,
               },
             ],
           },
-          /* REMOVETHIS - this depends on the type of degree they are doing and the input that we want */
-          // courseType: {
-          //   type: 'percentages',
-          //   subType: 'lookup',
-          //   split: [
-          //     {
-          //       lookup: 'BA',
-          //       split: 45,
-          //     },
-          //     {
-          //       lookup: 'BSc',
-          //       split: 40,
-          //     },
-          //     {
-          //       lookup: 'BEng',
-          //       split: 10,
-          //     },
-          //     {
-          //       lookup: 'LBB',
-          //       split: 5,
-          //     },
-          //   ],
-          // },
         },
       },
       {
@@ -399,25 +543,25 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-      {
+        {
           lookup: 'Very well',
-          split: 25,
+          split: 7,
         },
         {
           lookup: 'Well',
-          split: 20,
+          split: 8,
         },
         {
           lookup: 'Not very well',
-          split: 25,
+          split: 30,
         },
         {
           lookup: 'Not at all',
-          split: 15,
+          split: 25,
         },
         {
           lookup: 'Can\'t tell',
-          split: 15,
+          split: 30,
         },
       ],
     },
@@ -428,23 +572,23 @@ const config = {
       split: [
         {
           lookup: 'Very well',
-          split: 40,
+          split: 7,
         },
         {
           lookup: 'Well',
-          split: 15,
+          split: 8,
         },
         {
           lookup: 'Not very well',
-          split: 15,
+          split: 30,
         },
         {
           lookup: 'Not at all',
-          split: 15,
+          split: 25,
         },
         {
           lookup: 'Can\'t tell',
-          split: 15,
+          split: 30,
         },
       ],
     },
@@ -455,23 +599,23 @@ const config = {
       split: [
         {
           lookup: 'Very well',
-          split: 30,
+          split: 7,
         },
         {
           lookup: 'Well',
-          split: 15,
+          split: 8,
         },
         {
           lookup: 'Not very well',
-          split: 15,
+          split: 30,
         },
         {
           lookup: 'Not at all',
-          split: 20,
+          split: 25,
         },
         {
           lookup: 'Can\'t tell',
-          split: 20,
+          split: 30,
         },
       ],
     },
@@ -567,12 +711,12 @@ const config = {
     SalaryBASE: {
       // upper and lower numbers are used for calculation of annual salary which is then mutated to whatever the selected period becomes
       // we use a bell curve distribution between upper and lower numbers and then assign our values against that
-      lowerSalary: 28000,
-      meanSalary: 42000,
-      upperSalary: 65000,
+      lowerSalary: 50000,
+      meanSalary: 60000,
+      upperSalary: 100000,
       lowerBonus: 0,
-      meanBonus: 400,
-      upperBonus: 2000,
+      meanBonus: 1500,
+      upperBonus: 6000,
       // percentage of people that have a bonus
       haveBonusPercent: 20,
     },
@@ -580,7 +724,7 @@ const config = {
     hoursBASE: {
       data: [
         {
-          split: 50,
+          split: 20,
           contract: 40,
           contractVarianceUpPercent: 0,
           contractVarianceDownPercent: 0,
@@ -588,7 +732,7 @@ const config = {
           actualVarianceDownPercent: 0,
         },
         {
-          split: 15,
+          split: 10,
           contract: 40,
           contractVarianceUpPercent: 40,
           contractVarianceDownPercent: 0,
@@ -596,7 +740,7 @@ const config = {
           actualVarianceDownPercent: 40,
         },
         {
-          split: 20,
+          split: 40,
           contract: 20,
           contractVarianceUpPercent: 0,
           contractVarianceDownPercent: 0,
@@ -604,7 +748,7 @@ const config = {
           actualVarianceDownPercent: 0,
         },
         {
-          split: 15,
+          split: 30,
           contract: 20,
           contractVarianceUpPercent: 40,
           contractVarianceDownPercent: 0,
@@ -622,7 +766,7 @@ const config = {
       split: [
         {
           lookup: 'Yes, the qualification was a formal requirement',
-          split: 65,
+          split: 15,
         },
         {
           lookup: 'Yes, while the qualification was not a formal requirment it did give me an advantage',
@@ -630,11 +774,11 @@ const config = {
         },
         {
           lookup: 'No, the qualifation was not required',
-          split: 15,
+          split: 40,
         },
         {
           lookup: 'Don\'t know',
-          split: 15,
+          split: 40,
         },
       ],
     },
@@ -675,11 +819,11 @@ const config = {
       split: [
         {
           lookup: 'It fitted into my career plan / it was exactly the type of work I wanted',
-          split: 8,
+          split: 10,
         },
         {
           lookup: 'It was the best job offer I received',
-          split: 3,
+          split: 0,
         },
         {
           lookup: 'It was the only job offer I received',
@@ -687,7 +831,7 @@ const config = {
         },
         {
           lookup: 'It was an opportunity to progress in the organisation',
-          split: 6,
+          split: 10,
         },
         {
           lookup: 'To see if I would like the type of work it involved',
@@ -695,19 +839,19 @@ const config = {
         },
         {
           lookup: 'To gain and broaden my experience in order to get the type of job I really want',
-          split: 8,
+          split: 5,
         },
         {
           lookup: 'It was in the right location',
-          split: 22,
+          split: 40,
         },
         {
           lookup: 'The job was well-paid',
-          split: 8,
+          split: 50,
         },
         {
           lookup: 'In order to earn a living / pay off debts',
-          split: 40,
+          split: 0,
         },
       ],
     },
@@ -722,35 +866,35 @@ const config = {
         },
         {
           lookup: 'Other University / college source (e.g. lecturer or website)',
-          split: 1,
+          split: 0,
         },
         {
           lookup: 'Media (e.g. newspaper / magazine advertisement)',
-          split: 15,
+          split: 10,
         },
         {
           lookup: 'Personal contacts, including family and friends',
-          split: 7,
+          split: 10,
         },
         {
           lookup: 'Social media / professional networking sites',
-          split: 13,
+          split: 10,
         },
         {
           lookup: 'Employer\'s website',
-          split: 14,
+          split: 15,
         },
         {
           lookup: 'Recruitment agency / website',
-          split: 13,
+          split: 10,
         },
         {
           lookup: 'Speculative Application',
-          split: 13,
+          split: 15,
         },
         {
           lookup: 'Already worked there (i.e. internship)',
-          split: 14,
+          split: 20,
         },
         {
           lookup: 'Other',
@@ -765,19 +909,19 @@ const config = {
       split: [
         {
           lookup: 'Yes, before my programme of study',
-          split: 10,
+          split: 5,
         },
         {
           lookup: 'Yes during my programme of study',
-          split: 15,
+          split: 5,
         },
         {
           lookup: 'Yes, before and during my programme of study',
-          split: 15,
+          split: 0,
         },
         {
           lookup: 'No',
-          split: 60,
+          split: 90,
         },
       ],
     },
@@ -824,11 +968,11 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 10,
+          split: 2,
         },
         {
           lookup: 'Agree',
-          split: 5,
+          split: 3,
         },
         {
           lookup: 'Neither agree or disagree',
@@ -836,7 +980,7 @@ const config = {
         },
         {
           lookup: 'Disagree',
-          split: 25,
+          split: 35,
         },
         {
           lookup: 'Strongly disagree',
@@ -851,11 +995,11 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 10,
+          split: 2,
         },
         {
           lookup: 'Agree',
-          split: 5,
+          split: 3,
         },
         {
           lookup: 'Neither agree or disagree',
@@ -863,7 +1007,7 @@ const config = {
         },
         {
           lookup: 'Disagree',
-          split: 25,
+          split: 35,
         },
         {
           lookup: 'Strongly disagree',
@@ -878,11 +1022,11 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 10,
+          split: 2,
         },
         {
           lookup: 'Agree',
-          split: 5,
+          split: 3,
         },
         {
           lookup: 'Neither agree or disagree',
@@ -890,7 +1034,7 @@ const config = {
         },
         {
           lookup: 'Disagree',
-          split: 25,
+          split: 35,
         },
         {
           lookup: 'Strongly disagree',
@@ -905,11 +1049,11 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 10,
+          split: 2,
         },
         {
           lookup: 'Agree',
-          split: 5,
+          split: 3,
         },
         {
           lookup: 'Neither agree or disagree',
@@ -917,7 +1061,7 @@ const config = {
         },
         {
           lookup: 'Disagree',
-          split: 25,
+          split: 35,
         },
         {
           lookup: 'Strongly disagree',
@@ -932,11 +1076,11 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 10,
+          split: 2,
         },
         {
           lookup: 'Agree',
-          split: 5,
+          split: 3,
         },
         {
           lookup: 'Neither agree or disagree',
@@ -944,7 +1088,7 @@ const config = {
         },
         {
           lookup: 'Disagree',
-          split: 25,
+          split: 35,
         },
         {
           lookup: 'Strongly disagree',
@@ -959,11 +1103,11 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 10,
+          split: 2,
         },
         {
           lookup: 'Agree',
-          split: 5,
+          split: 3,
         },
         {
           lookup: 'Neither agree or disagree',
@@ -971,7 +1115,7 @@ const config = {
         },
         {
           lookup: 'Disagree',
-          split: 25,
+          split: 35,
         },
         {
           lookup: 'Strongly disagree',
@@ -986,11 +1130,11 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 10,
+          split: 2,
         },
         {
           lookup: 'Agree',
-          split: 5,
+          split: 3,
         },
         {
           lookup: 'Neither agree or disagree',
@@ -998,7 +1142,7 @@ const config = {
         },
         {
           lookup: 'Disagree',
-          split: 25,
+          split: 35,
         },
         {
           lookup: 'Strongly disagree',
@@ -1013,11 +1157,11 @@ const config = {
       split: [
         {
           lookup: 'Strongly agree',
-          split: 10,
+          split: 2,
         },
         {
           lookup: 'Agree',
-          split: 5,
+          split: 3,
         },
         {
           lookup: 'Neither agree or disagree',
@@ -1025,7 +1169,7 @@ const config = {
         },
         {
           lookup: 'Disagree',
-          split: 25,
+          split: 35,
         },
         {
           lookup: 'Strongly disagree',
