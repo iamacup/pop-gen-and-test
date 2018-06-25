@@ -391,7 +391,7 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-      {
+        {
           lookup: 'Very well',
           split: 25,
         },
@@ -559,7 +559,7 @@ const config = {
     SalaryBASE: {
       // upper and lower numbers are used for calculation of annual salary which is then mutated to whatever the selected period becomes
       // we use a bell curve distribution between upper and lower numbers and then assign our values against that
-     lowerSalary: 28000,
+      lowerSalary: 28000,
       meanSalary: 42000,
       upperSalary: 65000,
       lowerBonus: 0,

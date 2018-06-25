@@ -46,7 +46,6 @@ const handlePercentageSplits = async (question, config, friendlyName, answer, lo
 
   let answers = [];
   const options = [];
-  console.log(friendlyName, '********');
 
   if (typeof config[friendlyName] !== 'undefined' && config[friendlyName].subType === 'lookup') {
     // Populating options with left over options, and answers with real answer data.

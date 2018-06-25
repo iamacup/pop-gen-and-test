@@ -545,7 +545,7 @@ const config = {
     SalaryBASE: {
       // upper and lower numbers are used for calculation of annual salary which is then mutated to whatever the selected period becomes
       // we use a bell curve distribution between upper and lower numbers and then assign our values against that
-     lowerSalary: 19800,
+      lowerSalary: 19800,
       meanSalary: 38500,
       upperSalary: 60500,
       lowerBonus: 0,

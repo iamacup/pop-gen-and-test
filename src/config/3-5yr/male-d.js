@@ -196,7 +196,7 @@ const config = {
             type: 'percentages',
             subType: 'lookup',
             split: [
-             {
+              {
                 lookup: '2016',
                 split: 100,
               },
@@ -204,7 +204,7 @@ const config = {
                 lookup: '2015',
                 split: 100,
               },
-                            {
+              {
                 lookup: '2014',
                 split: 100,
               },

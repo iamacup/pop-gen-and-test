@@ -1660,7 +1660,7 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-       {
+        {
           lookup: 'Very likely',
           split: 10,
         },

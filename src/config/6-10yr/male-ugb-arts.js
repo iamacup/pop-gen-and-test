@@ -181,7 +181,7 @@ const config = {
             type: 'percentages',
             subType: 'lookup',
             split: [
-               {
+              {
                 lookup: '2012',
                 split: 20,
               },
@@ -934,7 +934,7 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-         {
+        {
           lookup: 'Strongly agree',
           split: 2,
         },

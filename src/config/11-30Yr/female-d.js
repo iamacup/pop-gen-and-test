@@ -1075,7 +1075,7 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-         {
+        {
           lookup: 'Strongly agree',
           split: 4,
         },

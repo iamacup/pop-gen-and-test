@@ -795,7 +795,7 @@ const config = {
     },
   },
   '5-1': {
- /* CHANGETHIS - let's make this basically go DOWN over time! */
+    /* CHANGETHIS - let's make this basically go DOWN over time! */
     applyDegreeToWork: {
       type: 'percentages',
       subType: 'lookup',
@@ -881,7 +881,7 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-         {
+        {
           lookup: 'Strongly agree',
           split: 15,
         },
@@ -935,7 +935,7 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-         {
+        {
           lookup: 'Strongly agree',
           split: 15,
         },

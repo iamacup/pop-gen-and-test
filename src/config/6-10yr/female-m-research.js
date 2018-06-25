@@ -403,7 +403,7 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-      {
+        {
           lookup: 'Very well',
           split: 20,
         },

@@ -12,8 +12,8 @@
 // we then specify the data for each loop inside of the qualifications array like we would for any other (Accepts normal arguments)
 
 const _ = require('lodash');
-const staticData = require('./11yrData/staticData.js');
-const yearGroupData = require('./11yrData/yearGroupData.js');
+const staticData = require('./31yrData/staticData.js');
+const yearGroupData = require('./31yrData/yearGroupData.js');
 
 const config = {
   '1-3': {
@@ -716,7 +716,7 @@ const config = {
     SalaryBASE: {
       // upper and lower numbers are used for calculation of annual salary which is then mutated to whatever the selected period becomes
       // we use a bell curve distribution between upper and lower numbers and then assign our values against that
-       lowerSalary: 40000,
+      lowerSalary: 40000,
       meanSalary: 50000,
       upperSalary: 80000,
       lowerBonus: 0,
@@ -822,7 +822,7 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-{
+        {
           lookup: 'It fitted into my career plan / it was exactly the type of work I wanted',
           split: 0,
         },

@@ -12,8 +12,8 @@
 // we then specify the data for each loop inside of the qualifications array like we would for any other (Accepts normal arguments)
 
 const _ = require('lodash');
-const staticData = require('./11yrData/staticData.js');
-const yearGroupData = require('./11yrData/yearGroupData.js');
+const staticData = require('./31yrData/staticData.js');
+const yearGroupData = require('./31yrData/yearGroupData.js');
 
 const config = {
   '1-3': {
@@ -40,7 +40,7 @@ const config = {
     age: {
       type: 'dates',
       split: [
-                {
+        {
           yearsAgo: 54,
           month: 'rand',
           frequency: 5,
@@ -540,7 +540,7 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-      {
+        {
           lookup: 'Very well',
           split: 10,
         },
@@ -963,7 +963,7 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-       {
+        {
           lookup: 'Strongly agree',
           split: 2,
         },

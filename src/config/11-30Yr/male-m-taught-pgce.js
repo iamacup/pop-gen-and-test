@@ -261,7 +261,7 @@ const config = {
             type: 'percentages',
             subType: 'lookup',
             split: [
-            {
+              {
                 lookup: '2007',
                 split: 5,
               },
@@ -809,7 +809,7 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-       {
+        {
           lookup: 'It fitted into my career plan / it was exactly the type of work I wanted',
           split: 10,
         },
@@ -1066,7 +1066,7 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-         {
+        {
           lookup: 'Strongly agree',
           split: 4,
         },

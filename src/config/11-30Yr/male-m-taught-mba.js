@@ -40,7 +40,7 @@ const config = {
     age: {
       type: 'dates',
       split: [
-                {
+        {
           yearsAgo: 31,
           month: 'rand',
           frequency: 5,
@@ -261,7 +261,7 @@ const config = {
             type: 'percentages',
             subType: 'lookup',
             split: [
-            {
+              {
                 lookup: '2007',
                 split: 5,
               },
@@ -535,7 +535,7 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-         {
+        {
           lookup: 'Very well',
           split: 15,
         },
@@ -611,7 +611,7 @@ const config = {
         },
       ],
     },
-  },,
+  },
   '4-5': {
     currency: {
       type: 'percentages',
@@ -1066,7 +1066,7 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-         {
+        {
           lookup: 'Strongly agree',
           split: 4,
         },

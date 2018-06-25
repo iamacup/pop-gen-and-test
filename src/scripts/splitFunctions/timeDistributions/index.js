@@ -32,9 +32,11 @@ const timeDistributions = async (question, friendlyName, answer, localInterface,
   // stick totals on the thing and generate a list with all zero values removed
   for (let a = 0; a < useDistributions.length; a++) {
     if (useDistributions[a].frequency !== 0) {
+      useDistributions[a].end = total + useDistributions[a].frequency;
+      useDistributions[a].start = total;
+
       total += useDistributions[a].frequency;
 
-      useDistributions[a].total = total;
       cleanedArr.push(_.assign({}, useDistributions[a]));
     }
   }
@@ -45,8 +47,8 @@ const timeDistributions = async (question, friendlyName, answer, localInterface,
   // reverse iterate the list and pick the answer
   let pickValue = null;
 
-  for (let a = cleanedArr.length - 1; a > 0; a--) {
-    if (cleanedArr[a].total <= rand) {
+  for (let a = 0; a < cleanedArr.length; a++) {
+    if (rand >= cleanedArr[a].start && rand <= cleanedArr[a].end) {
       pickValue = cleanedArr[a];
       break;
     }
@@ -57,9 +59,21 @@ const timeDistributions = async (question, friendlyName, answer, localInterface,
     pickValue = cleanedArr[0];
   }
 
+  // get the year value
+  const now = 2018;
+  pickValue.year = now - pickValue.yearsAgo;
+
   // make sure the month is OK
   if (pickValue.month === 'rand') {
-    const month = getRandomInt(1, 12);
+    let month = getRandomInt(1, 12);
+
+    // we have to do something to stop future dates being picked
+    if (pickValue.year === 2018) {
+      // thing
+      const d = new Date();
+      const n = d.getMonth();
+      month = getRandomInt(1, n + 1);
+    }
 
     if (month === 1) {
       pickValue.month = '01';
@@ -87,10 +101,6 @@ const timeDistributions = async (question, friendlyName, answer, localInterface,
       pickValue.month = '12';
     }
   }
-
-  // get the year value
-  const now = 2018;
-  pickValue.year = now - pickValue.yearsAgo;
 
   // compile final value
   const finalVal = `${pickValue.month}/${pickValue.year}`;

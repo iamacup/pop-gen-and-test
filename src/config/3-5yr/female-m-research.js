@@ -40,7 +40,7 @@ const config = {
     age: {
       type: 'dates',
       split: [
-         {
+        {
           yearsAgo: 24,
           month: 'rand',
           frequency: 75,
@@ -399,7 +399,7 @@ const config = {
       type: 'percentages',
       subType: 'lookup',
       split: [
-      {
+        {
           lookup: 'Very well',
           split: 25,
         },
