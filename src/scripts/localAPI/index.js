@@ -14,7 +14,7 @@ const instance = axios.create({
 });
 
 module.exports = async (endpoint, data = {}) => {
-  const url = `https://localhost:8080${endpoint}`;
+  const url = `https://localhost:443${endpoint}`;
 
   // console.log(`doing: ${url}`);
 

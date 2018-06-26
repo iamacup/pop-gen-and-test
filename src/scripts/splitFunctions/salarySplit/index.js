@@ -43,10 +43,10 @@ const salarySplit = async (question, config, answer, localInterface, step) => {
       annualBonus = Math.round(annualBonus / 1000) * 1000;
       annualSalary = Math.round(annualSalary / 1000) * 1000;
 
-      console.log('SALARIES:', annualBonus, annualSalary);
+      //console.log('SALARIES:', annualBonus, annualSalary);
     }
   } else {
-    console.log('UNPAID');
+    //console.log('UNPAID');
   }
 
   // pull back the last answer, if it was yes to unpaid - don't put in a salary!

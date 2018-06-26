@@ -10,7 +10,7 @@ module.exports = async (urlData, localInterface, responseFunc) => {
   let sessionID = null;
 
   try {
-    console.log('!! STARTING !!');
+    // console.log('!! STARTING !!');
     sessionID = null;
 
     for (let a = 0; a < executionItems.length; a++) {

@@ -1,0 +1,14 @@
+node ./src/app.js 30031 "Aristotle University" "3-5yr/female-d.js" 50
+node ./src/app.js 30038 "Aristotle University" "3-5yr/male-d.js" 60
+node ./src/app.js 30032 "Aristotle University" "3-5yr/female-m-research.js" 40
+node ./src/app.js 30039 "Aristotle University" "3-5yr/male-m-research.js" 50
+node ./src/app.js 30033 "Aristotle University" "3-5yr/female-m-taught-mba.js" 50
+node ./src/app.js 30130 "Aristotle University" "3-5yr/male-m-taught-mba.js" 80
+node ./src/app.js 30034 "Aristotle University" "3-5yr/female-m-taught-pgce.js" 80
+node ./src/app.js 30131 "Aristotle University" "3-5yr/male-m-taught-pgce.js" 20
+node ./src/app.js 30035 "Aristotle University" "3-5yr/female-ugb-arts.js" 400
+node ./src/app.js 30132 "Aristotle University" "3-5yr/male-ugb-arts.js" 400
+node ./src/app.js 30036 "Aristotle University" "3-5yr/female-ugb-science.js" 400
+node ./src/app.js 30133 "Aristotle University" "3-5yr/male-ugb-science.js" 400
+node ./src/app.js 30037 "Aristotle University" "3-5yr/female-ugm.js" 250
+node ./src/app.js 30134 "Aristotle University" "3-5yr/male-ugm.js" 250

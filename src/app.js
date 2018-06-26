@@ -1,12 +1,12 @@
 
 const colors = require('colors');
 
-const express = require('express');
-const bodyParser = require('body-parser');
+//const express = require('express');
+//const bodyParser = require('body-parser');
 
-const routes = require('./routes');
+//const routes = require('./routes');
 
-const { spawn } = require('child_process');
+//const { spawn } = require('child_process');
 
 if (process.argv.length !== 6) {
   console.err('Not enough arguments passed - expect `port "university name" "configuration file name" populationLimit`');
@@ -23,6 +23,35 @@ console.log(`using uniName: ${uniName}`);
 console.log(`using configFile: ${configFile}`);
 console.log(`using populationLimit: ${populationLimit}`);
 
+const generatePopulation = require('./actions/generate-population');
+const localInterface = require('./scripts/localAPI');
+
+let counter = 0;
+
+const runner = () => {
+  if (counter === populationLimit) {
+    console.log('Finished'.green);
+    console.log(`${counter} population made with configuration file: ${configFile}`.green);
+    process.exit();
+  }
+
+  console.log(`INSTANCE: ${counter}`.magenta);
+  counter++;
+
+  generatePopulation(null, localInterface, (status) => {
+    if(status === 'success') {
+      runner();
+    } else {
+      console.log('!!!!!!!! ERROR');
+      runner();
+    }
+  });
+
+};
+
+runner();
+
+/*
 const app = express();
 
 app.use(bodyParser.json());
@@ -61,3 +90,4 @@ const server = app.listen(port, () => {
     runner();
   }
 });
+*/
